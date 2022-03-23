@@ -34,8 +34,8 @@
 }
 .flex-pauseplay span {
   text-transform: capitalize;
+  
 }
-
 /* ====================================================================================================================
  * BASE STYLES
  * ====================================================================================================================*/
@@ -46,6 +46,7 @@
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
+  z-index: 0;
 }
 .flexslider .slides img {
   width: 100%;
@@ -115,7 +116,7 @@ html[xmlns] .flexslider .slides {
   margin: -30px 0 0;
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 0;
   overflow: hidden;
   opacity: 0;
   cursor: pointer;
@@ -170,7 +171,7 @@ html[xmlns] .flexslider .slides {
   bottom: 5px;
   left: 10px;
   opacity: 0.8;
-  z-index: 10;
+  z-index: 0;
   overflow: hidden;
   cursor: pointer;
   color: #000;
