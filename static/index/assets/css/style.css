@@ -1874,7 +1874,7 @@ footer a:hover {
 
 #owl-demo .item img {
   display: block;
-  height: auto;
+  height: 8rem;
   margin: 0 auto;
 }
 
@@ -2275,7 +2275,7 @@ ul.services-list li {
 -------------------------------- */
 
 .site-hero-contact {
-  background: url("../img/site-hero-contact.jpg") no-repeat;
+  background: url("../img/contact_header.png") no-repeat;
   background-size: cover;
   height: 600px;
   width: 100%;
