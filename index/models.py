@@ -6,10 +6,9 @@ from django.db import models
 # Create your models here.
 
 class Index(models.Model):
-    tagline_1 = models.TextField(max_length=100)
-    tagline_2 = models.TextField(max_length=100)
+    tagline = models.TextField(max_length=100)
     main_heading = models.TextField(max_length=100, null= True)
-    about = models.TextField(max_length=200, null= True)
+    about = models.TextField(max_length=500, null= True)
     team_heading = models.TextField(max_length=200, null= True)
     services_heading = models.TextField(max_length=200, null= True)
     portfolio = models.TextField(max_length=200, null= True)
@@ -25,6 +24,27 @@ class Index(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='clients', null=True, blank=True)
+
+    def __str__(self):
+        return str(self.name)
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=50)
+    designation = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='testimonial', null=True, blank=True)
+    testimonial = models.TextField(max_length=100)
+
+    def __str__(self):
+        return str(self.name)
+
+class Team(models.Model):
+    name = models.CharField(max_length=50)
+    designation = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='team', null=True, blank=True)
+    facebook_link = models.URLField(max_length=100, null=True, blank=True)
+    twitter_link = models.URLField(max_length=100, null=True, blank=True)
+    linkedin_link = models.URLField(max_length=100, null=True, blank=True)
+    instagram_link = models.URLField(max_length=100, null=True, blank=True)
 
     def __str__(self):
         return str(self.name)
