@@ -113,14 +113,21 @@
 			}
 		});
 
-		$("#owl-demo").owlCarousel({
 
+		var owl = $('.owl-carousel');
+		owl.owlCarousel({
+			items: 4,
+			loop: true,
+			nav:true,
+			autoPlay: true,
+			autoPlay: 6000,
+			loop:true,
+			});
+		
+
+		$("#owl-client").owlCarousel({
 		 autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-		 items : 4,
-		 itemsDesktop : [1199,5],
-		 itemsDesktopSmall : [979,3]
-
+		 items : 4
  		});
 
 		// dropdown - mobile

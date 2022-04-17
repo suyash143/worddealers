@@ -2,14 +2,11 @@
 {%load static%}
 {% block content %}
 <!-- box-intro -->
-<section class="box-intro bg-film">
+<section class="box-intro">
     <div class="table-cell">
 
-        <h3 class="box-headline letters rotate-2">
-										<span class="box-words-wrapper">
-												<b class="is-visible">{{index.tagline_1}}</b>
-												<b>{{index.tagline_2}}</b>
-										</span>
+        <h3 class="box-headline">
+                <b>{{index.tagline}}</b>
         </h3>
         <h1>{{index.main_heading}}</h1>
 
@@ -20,31 +17,25 @@
     </div>
 </section>
 <!-- end box-intro -->
-</div>
-</header>
 
-<!-- HISTORY OF AGENCY -->
-<section id="about" class="about mt-25">
+<!-- Ablout -->
+
+<div id="facts" class="facts mbr-box mbr-section mbr-section--relative">
     <div class="container">
         <div class="row center">
-            <div class="col-md-8 col-md-offset-2">
-                <img src="{% static 'index/assets/img/about.png' %}" alt="Khaki HTML Template" width="300">
-                <div class="km-space"></div>
-                <h5 class="lead">{{ index.about }}</h5>
+            <div class="col-md-12 col-sm-12">
+                <h2>About Us</h2>
             </div>
-        </div><!-- description text -->
-    </div>
-</section>
-
-<!-- FACTS  -->
-<div id="facts" class="facts mt-25 mbr-box mbr-section mbr-section--relative">
-    <div class="container">
+            <div class="col-md-12 col-md-offset-2">
+                <h5 class="lead mb-5">{{ index.about }}</h5>
+            </div>
+        </div>
         <div class="row text-center">
             <div class="col-xs-12 col-lg-3 col-md-3">
                 <div class="count-item">
                     <i class="lnr lnr-clock"></i>
                     <div class="numscroller" data-slno='1' data-min='0' data-max='4444' data-delay='10'
-                         data-increment="10">9909
+                        data-increment="10">9909
                     </div>
                     <div class="count-name-intro">Hours</div>
                 </div>
@@ -53,7 +44,7 @@
                 <div class="count-item">
                     <i class="lnr lnr-rocket"></i>
                     <div class="numscroller" data-slno='1' data-min='0' data-max='1111' data-delay='10'
-                         data-increment="5">1111
+                        data-increment="5">1111
                     </div>
                     <div class="count-name-intro">Projects</div>
                 </div>
@@ -62,7 +53,7 @@
                 <div class="count-item">
                     <i class="lnr lnr-coffee-cup"></i>
                     <div class="numscroller" data-slno='1' data-min='0' data-max='1555' data-delay='10'
-                         data-increment="5">1555
+                        data-increment="5">1555
                     </div>
                     <div class="count-name-intro">coffe's</div>
                 </div>
@@ -71,7 +62,7 @@
                 <div class="count-item">
                     <i class="lnr lnr-camera"></i>
                     <div class="numscroller" data-slno='1' data-min='0' data-max='4444' data-delay='10'
-                         data-increment="10">4444
+                        data-increment="10">4444
                     </div>
                     <div class="count-name-intro">Photos taken</div>
                 </div>
@@ -81,165 +72,63 @@
 </div>
 
 <!-- TEAM -->
-<section id="team" class="team mbr-box mbr-section mbr-section--relative">
-    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1"
-         xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0 L50 100 L100 0 Z" fill="#ffbad3a8" stroke="#ffbad3a8"></path>
-    </svg>
+<section id="team" class="team mbr-box mbr-section mbr-section--relative pb-4">
     <div class="container">
-        <div class="col-md-8 col-md-offset-2 col-sm-12">
-            <div class="row center mb-100">
-                <div class="section-title-parralax">
-                    <div class="process-numbers">&nbsp</div>
-                    <h2>Our Team</h2>
-                    <p class="module-subtitle">{{ index.team_heading }}
-                    </p>
-                </div>
+        <div class="row mb-5 center">
+            <div class="col-md-12 col-sm-12">
+                <h2>Our Team</h2>
+                <h5 class="">{{ index.team_heading }}
             </div>
         </div>
-        <div class="row">
-            <!-- single member -->
-            <div class="team-member col-md-4 col-sm-4 text-center">
-                <div class="member-thumb">
-                    <div class="cover">
-                        <div class="cover-inner-left"></div>
-                    </div>
-                    <img src="{%static 'index/assets/img/team/member-1.jpg'%}" alt="Team Member" class="img-responsive">
-                    <div class="team_cover">
-                        <div class="team_cover_inner"></div>
-                    </div>
-                    <div class="overlay">
-                        <h6>Nice to meet! </h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.</p>
-                        <div class="social-links">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <h6>Tanislav Robert</h6>
-                <span>Managing Director</span>
-            </div>
-            <!-- end single member -->
 
+        
+        
+        <div class="row owl-carousel owl-demo owl-theme">
+            {% for member in team %}
             <!-- single member -->
-            <div class="team-member col-md-4 col-sm-4 text-center">
-                <div class="member-thumb">
-                    <div class="cover">
-                        <div class="cover-inner-middle"></div>
-                    </div>
-                    <img src="{%static 'index/assets/img/team/member-2.jpg'%}" alt="Team Member" class="img-responsive">
-                    <div class="team_cover">
-                        <div class="team_cover_inner"></div>
-                    </div>
-                    <div class="overlay">
-                        <h6>HELLO &amp; WELCOME! </h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.</p>
-                        <div class="social-links">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google"></i></a>
-                        </div>
-                    </div>
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="owl-item">
+                <div class="card d-flex flex-column align-items-center justify-content-center py-5 px-4 mx-2"><img src="{{member.image.url}}" alt="" width="100"
+                        class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">{{member.name}}</h5><span
+                        class="small text-uppercase text-muted">{{member.designation}}</span>
+                    <ul class="social mb-0 list-inline mt-3">
+                        {% if member.facebook_link %}
+                        <li class="list-inline-item"><a href="{{member.facebook_link}}" class="social-link"><i
+                                    class="fa-brands fa-facebook-f"></i></a></li>
+                        {% endif %}
+                        {% if member.twitter_link %}
+                        <li class="list-inline-item"><a href="{{member.twitter_link}}" class="social-link"><i
+                                    class="fa-brands fa-twitter"></i></a></li>
+                        {% endif %}
+                        {% if member.instagram_link %}
+                        <li class="list-inline-item"><a href="{{member.instagram_link}}" class="social-link"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        {% endif %}
+                        {% if member.linkedin_link %}
+                        <li class="list-inline-item"><a href="{{member.linkedin_link}}" class="social-link"><i
+                                    class="fa-brands fa-linkedin"></i></a></li>
+                        {% endif %}
+                    </ul>
                 </div>
-                <h6>Oana Calota</h6>
-                <span>Lead Developer</span>
+            </div>
             </div>
             <!-- end single member -->
-
-            <!-- single member -->
-            <div class="team-member col-md-4 col-sm-4 text-center ">
-                <div class="member-thumb">
-                    <div class="cover">
-                        <div class="cover-inner-right"></div>
-                    </div>
-                    <img src="{%static 'index/assets/img/team/member-3.jpg'%}" alt="Team Member" class="img-responsive">
-                    <div class="team_cover">
-                        <div class="team_cover_inner"></div>
-                    </div>
-                    <div class="overlay">
-                        <h6>HI FRIEND! </h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.</p>
-                        <div class="social-links">
-                            <a href=""><i class="fa fa-twitter"></i></a>
-                            <a href=""><i class="fa fa-facebook"></i></a>
-                            <a href=""><i class="fa fa-google"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <h6>Lucian Tanislav</h6>
-                <span>Seo Guru</span>
-            </div>
-            <!-- end single member -->
+            {% endfor %}
         </div>
     </div>
     <div class="bottom-separator hidden-xs"></div>
 </section>
-<!-- FEATURES -->
-<div id="features" class="features mbr-box mbr-section mbr-section--relative">
-    <div class="container">
-        <div class="row center">
-            <div class="feature-item">
-                <div class="col-md-3 col-sm-6">
-                    <div class="item-head">
-                        <i class="lnr lnr-diamond"></i>
-                    </div>
-                    <h6>creative design</h6>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-            </div>
-            <!-- End features-item -->
-            <div class="feature-item">
-                <div class="col-md-3 col-sm-6">
-                    <div class="item-head">
-                        <i class="lnr lnr-rocket"></i>
-                    </div>
-                    <h6>well organized</h6>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book.e</p>
-                </div>
-            </div>
-            <!-- End features-item -->
 
-            <div class="feature-item">
-                <div class="col-md-3 col-sm-6">
-                    <div class="item-head">
-                        <i class="lnr lnr-mustache"></i>
-                    </div>
-                    <h6>easy to customize</h6>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-            </div>
-            <!-- End features-item -->
-
-            <div class="feature-item">
-                <div class="col-md-3 col-sm-6">
-                    <div class="item-head">
-                        <i class="lnr lnr-phone"></i>
-                    </div>
-                    <h6>support 24/7</h6>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-            </div>
-            <!-- End features-item -->
-        </div>
-    </div>
-</div>
-
-<!-- SERVICES PARALAX -->
+<!-- SERVICES -->
 <section id="services"
-         class="services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
-         style="background-image: url(assets/img/services.jpg);">
+    class="services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
+    style="background-image: url(assets/img/services.jpg);">
     <div class="section-overlay"></div>
     <div class="container">
         <div class="row center">
-            <div class="col-md-8 col-md-offset-2 col-sm-12">
+            <div class="col-md-12 col-md-offset-2 col-sm-12">
                 <div class="section-title-parralax">
-                    <div class="process-numbers">&nbsp</div>
                     <h2>services</h2>
                     <p class="module-subtitle">{{ index.services_heading }}
                     </p>
@@ -248,15 +137,15 @@
         </div>
         <div class="row">
             <div class="col-lg-6 right col-full right-0">
-                <i class="lnr lnr-rocket"></i>
-                <h6>unlimited options</h6>
+                <i class="fa-solid fa-language"></i>
+                <h6>Translation</h6>
                 <p>Quisque eget hendrerit eros, ut interdum magna.
                     <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
                 </p>
             </div>
             <div class="col-lg-6 left col-full left-0">
-                <i class="lnr lnr-laptop-phone"></i>
-                <h6>design &amp; development</h6>
+                <i class="fa-solid fa-headphones"></i>
+                <h6>Transcription</h6>
                 <p>Quisque eget hendrerit eros, ut interdum magna.
                     <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
                 </p>
@@ -264,15 +153,43 @@
         </div>
         <div class="row">
             <div class="col-lg-6 right col-full right-0">
-                <i class="lnr lnr-cart"></i>
-                <h6>e-commerce</h6>
+                <i class="fa-solid fa-align-left"></i>
+                <h6>Content Writing</h6>
                 <p>Quisque eget hendrerit eros, ut interdum magna.
                     <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
                 </p>
             </div>
             <div class="col-lg-6 left col-full left-0">
-                <i class="lnr lnr-cog"></i>
-                <h6>customizable design</h6>
+                <i class="fa-solid fa-glasses"></i>
+                <h6>Proofreading</h6>
+                <p>Quisque eget hendrerit eros, ut interdum magna.
+                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
+                </p>
+            </div>
+            <div class="col-lg-6 right col-full right-0">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <h6>Editing</h6>
+                <p>Quisque eget hendrerit eros, ut interdum magna.
+                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
+                </p>
+            </div>
+            <div class="col-lg-6 left col-full left-0">
+                <i class="fa-solid fa-keyboard"></i>
+                <h6>Typing</h6>
+                <p>Quisque eget hendrerit eros, ut interdum magna.
+                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
+                </p>
+            </div>
+            <div class="col-lg-6 right col-full right-0">
+                <i class="fa-solid fa-people-pulling"></i>
+                <h6>Lingual Escorting</h6>
+                <p>Quisque eget hendrerit eros, ut interdum magna.
+                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
+                </p>
+            </div>
+            <div class="col-lg-6 left col-full left-0">
+                <i class="fa-solid fa-headset"></i>
+                <h6>Simultaneous Interpretation</h6>
                 <p>Quisque eget hendrerit eros, ut interdum magna.
                     <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
                 </p>
@@ -281,221 +198,45 @@
     </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="portfolio">
-    <div class="top-right-separator hidden-xs"></div>
-    <div class="container">
-        <div class="col-md-8 col-md-offset-2 col-sm-12">
-            <div class="row center">
-                <div class="section-title mb-100">
-                    <div class="process-numbers">&nbsp</div>
-                    <h2>portfolio</h2>
-                    <p class="module-subtitle">{{ index.portfolio }}</p>
-                </div>
-            </div>
-        </div>
-        <!-- categories  -->
-        <div class="col-md-3">
-            <div class="row categories-grid">
-                <nav class="categories">
-                    <ul class="portfolio_filter">
-                        <li><a href="" class="active" data-filter="*">all</a></li>
-                        <li><a href="" data-filter=".photography">photography</a></li>
-                        <li><a href="" data-filter=".web">webdesign</a></li>
-                        <li><a href="" data-filter=".logo">logo</a></li>
-                        <li><a href="" data-filter=".graphics">graphics</a></li>
-                        <li><a href="" data-filter=".ads">advertising</a></li>
-                        <li><a href="" data-filter=".fashion">fashion</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-
-        <!-- all works -->
-        <div class="col-md-9">
-            <div class="row portfolio_container">
-                <!-- single work -->
-                <div class="col-md-4 photography">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-1.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>Brave man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 fashion logo">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-2.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>super man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 ads graphics">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-5.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>bat man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 fashion ads">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-4.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>spider man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 graphics ads">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-3.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>iron man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 logo web photography">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-6.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>iron man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 ads graphics">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-2.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>iron man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 web fashion photography">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-3.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>iron man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-
-                <!-- single work -->
-                <div class="col-md-4 fashion logo">
-                    <a href="single-project.html" class="portfolio_item work-grid">
-                        <img src="{%static 'index/assets/img/work-1.jpg'%}" alt="image">
-                        <div class="portfolio_item_hover">
-                            <div class="item_info">
-                                <span>iron man</span>
-                                <em>photography</em>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- end single work -->
-            </div>
-            <!-- end row -->
-        </div>
-        <!-- all works end -->
-    </div>
-    <!-- end container -->
-</section>
-<!-- portfolio -->
 
 <!-- CLIENTS -->
-<div id="clients" class="clients mt-100 mbr-box mbr-section mbr-section--relative">
-    <svg preserveAspectRatio="none" viewBox="0 0 100 102" height="100" width="100%" version="1.1"
-         xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0 L50 100 L100 0 Z" fill="#ffbad3a8" stroke="#ffbad3a8"></path>
-    </svg>
+<div id="clients" class="clients pb-4 mt-25 mbr-box mbr-section mbr-section--relative">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row center">
+            <div class="col-md-12 col-sm-12">
+                <h2>Our Clients</h2>
             </div>
-            <div id="owl-demo">
+            <div id="owl-client">
                 {% for client in clients %}
-                <div class="item"><img src="{{client.image.url}}" alt="{{client.name}}"></div>
+                <div class="item card mx-4 px-2 py-2"><img src="{{client.image.url}}" alt="{{client.name}}" style="max-width: 100%;"></div>
                 {% endfor %}
             </div>
         </div>
     </div>
 </div>
 
-<!-- PRICING -->
 
 <!-- Testimonials -->
 <section id="testimonials"
-         class="testimonials mt-100 mb-100 mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--bg-adapted mbr-parallax-background"
-         style="background-image: url(assets/img/testimonials.jpg);">
+    class="testimonials "
+    style="background-image: url(assets/img/testimonials.jpg);">
     <div class="container">
+        <div class="row center">
+            <div class="col-md-12 col-sm-12">
+                <h2>Testimonials</h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="flexslider">
                     <ul class="slides">
+                        {% for testimonial in testimonial %}
                         <li>
-                            <div class="avatar"><img src="{%static 'index/assets/img/testimonial1.jpg'%}"
-                                                     alt="Sedna Testimonial Avatar"></div>
-                            <h5>"Lorem ipsum dolor sit amet, nullam lucia nisi."</h5>
-                            <p class="author">Tanislav Robert, Product Designer.</p>
+                            <div class="avatar"><img src="{{ testimonial.image.url }}" alt="Testimonial Avatar"></div>
+                            <h5>"{{testimonial.testimonial}}"</h5>
+                            <p class="author">{{testimonial.name}}, {{testimonial.designation}}.</p>
                         </li>
-                        <li>
-                            <div class="avatar"><img src="{%static 'index/assets/img/testimonial2.jpg'%}"
-                                                     alt="Sedna Testimonial Avatar"></div>
-                            <h5>"Nunc vel maximus purus. Nullam ac urna ornare."</h5>
-                            <p class="author">Tanislav Alexandru, Founder @ WocTech.</p>
-                        </li>
-                        <li>
-                            <div class="avatar"><img src="{%static 'index/assets/img/testimonial3.jpg'%}"
-                                                     alt="Sedna Testimonial Avatar"></div>
-                            <h5>"Nullam ac urna ornare, ultrices nisl ut, lacinia nisi."</h5>
-                            <p class="author">Calota Oana, Pixel Guru</p>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -506,21 +247,18 @@
 <!-- Contact -->
 <section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
     <div class="container">
-        <div class="col-md-6 col-sm-12">
-            <div class="row">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
                 <h4> let's work together</h4>
                 <p class="libre-text mt-25">
                     {{ index.contact_description }}
                 </p>
 
                 <a href="contact.html" class="default-btn"> Get in touch <i class="fa fa-angle-double-right"
-                                                                            aria-hidden="true"></i></a>
+                        aria-hidden="true"></i></a>
             </div>
-        </div>
-
-        <!-- Subscribe block -->
-        <div class=" col-md-offset-1 col-md-5 col-sm-12">
-            <div class="row center">
+            <!-- Subscribe block -->
+            <div class="col-md-6 col-sm-12">
                 <div class="newsletter">
                     <h4>SUBSCRIBE</h4>
                     <p class="libre-text mb-50">
@@ -528,16 +266,16 @@
                     </p>
                     <form action="#" method="post">
                         <div class="input_1">
-                            <input type="text" name="email">
-                            <span>Enter your email adress</span>
+                            <input type="text" name="email" placeholder="Enter your email adress">
                         </div>
                         <button id="submit_btn" class="default-btn"> Send <i class="fa fa-angle-double-right"
-                                                                             aria-hidden="true"></i></button>
+                                aria-hidden="true"></i></button>
 
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 {% endblock content %}
