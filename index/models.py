@@ -48,3 +48,11 @@ class Team(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class Service(models.Model):
+    name = models.CharField(max_length=50, blank=False)
+    description = models.CharField(max_length=200, blank=False)
+    icon = models.CharField(max_length=50, blank=False)
+
+    def __str__(self):
+        return str(self.name)

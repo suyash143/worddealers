@@ -136,71 +136,29 @@
             </div>
         </div>
         <div class="row">
+            {% for service in services %}
+            {% ifequal forloop.counter|divisibleby:"2" False %}
             <div class="col-lg-6 right col-full right-0">
-                <i class="fa-solid fa-language"></i>
-                <h6>Translation</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
+                <i class="fa-solid {{service.icon}}"></i>
+                <h6>{{service.name | upper}}</h6>
+                <p>{{service.description}}</p>
             </div>
+         
+            {% else %}
             <div class="col-lg-6 left col-full left-0">
-                <i class="fa-solid fa-headphones"></i>
-                <h6>Transcription</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
+                <i class="fa-solid {{service.icon}}"></i>
+                <h6>{{service.name | upper}}</h6>
+                <p>{{service.description}}</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 right col-full right-0">
-                <i class="fa-solid fa-align-left"></i>
-                <h6>Content Writing</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
-            <div class="col-lg-6 left col-full left-0">
-                <i class="fa-solid fa-glasses"></i>
-                <h6>Proofreading</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
-            <div class="col-lg-6 right col-full right-0">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <h6>Editing</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
-            <div class="col-lg-6 left col-full left-0">
-                <i class="fa-solid fa-keyboard"></i>
-                <h6>Typing</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
-            <div class="col-lg-6 right col-full right-0">
-                <i class="fa-solid fa-people-pulling"></i>
-                <h6>Lingual Escorting</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
-            <div class="col-lg-6 left col-full left-0">
-                <i class="fa-solid fa-headset"></i>
-                <h6>Simultaneous Interpretation</h6>
-                <p>Quisque eget hendrerit eros, ut interdum magna.
-                    <br>Donec urna ante, lobortis nec dictum eget, porta non turpis.
-                </p>
-            </div>
+            {% endifequal %}
+            {% endfor %}
         </div>
     </div>
 </section>
 
 
 <!-- CLIENTS -->
-<div id="clients" class="clients pb-4 mt-25 mbr-box mbr-section mbr-section--relative">
+<div id="clients" class="clients pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
     <div class="container">
         <div class="row center">
             <div class="col-md-12 col-sm-12">
