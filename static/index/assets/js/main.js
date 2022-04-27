@@ -123,7 +123,6 @@
 			autoPlay: 6000,
 			loop:true,
 			});
-		
 
 		$("#owl-client").owlCarousel({
 		 autoPlay: 3000, //Set AutoPlay to 3 seconds

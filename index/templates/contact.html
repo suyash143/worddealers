@@ -2,94 +2,71 @@
 {%load static%}
 {% block content %}
 <!-- HERO SECTION  -->
-<div class="site-hero-contact">
-	<div class="section-overlay"></div>
-	<div class="page-title">
-		<h2>Contact Us</h2>
-		<div class="small-title">home / contact</div>
-	</div>
+<div id="contact" class="contact-area section-padding py-5">
+	<div class="container">										
+		<div class="section-title text-center">
+			<h1>Get in Touch</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui venenatis dignissim. Aenean vitae metus in augue pretium ultrices.</p>
+		</div>					
+		<div class="row">
+			<div class="col-lg-7">	
+				<div class="contact">
+					<form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<input type="text" name="name" class="form-control" placeholder="Name" required="required">
+							</div>
+							<div class="form-group col-md-6">
+								<input type="email" name="email" class="form-control" placeholder="Email" required="required">
+							</div>
+							<div class="form-group col-md-12">
+								<input type="text" name="subject" class="form-control" placeholder="Subject" required="required">
+							</div>
+							<div class="form-group col-md-12">
+								<textarea rows="6" name="message" class="form-control" placeholder="Your Message" required="required"></textarea>
+							</div>
+							<div class="col-md-12 text-center">
+								<button type="submit" value="Send message" name="submit" id="submitButton" class="btn btn-contact-bg" title="Submit Your Message!">Send Message</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div><!--- END COL --> 
+			<div class="col-lg-5">
+				<div class="single_address">
+					<i class="fa-solid fa-location-dot"></i>
+					<h4>Our Address</h4>
+					<p>3481 Melrose Place, Beverly Hills</p>
+				</div>
+				<div class="single_address">
+					<i class="fa fa-envelope"></i>
+					<h4>Send your message</h4>
+					<p>Info@example.com</p>
+				</div>
+				<div class="single_address">
+					<i class="fa fa-phone"></i>
+					<h4>Call us on</h4>
+					<p>(+1) 517 397 7100</p>
+				</div>
+				<div class="single_address">
+					<i class="fa fa-clock-o"></i>
+					<h4>Work Time</h4>
+					<p>Mon - Fri: 08.00 - 16.00. <br>Sat: 10.00 - 14.00</p>
+				</div>					
+			</div><!--- END COL --> 
+		</div><!--- END ROW -->
+	</div><!--- END CONTAINER -->	
 </div>
-
-<section class="contact_brick">
-	<div class="container mt-100">
-		<div class="row center">
-			<div class="col-md-8 col-md-offset-2 col-sm-12">
-				<div class="section-title">
-					<h2 class="mb-50">GET IN TOUCH WITH US</h2>
-					<p class="module-subtitle">Latest project we have made. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row mt-100">
-				<!--location-->
-				<div class="col-md-4 col-sm-4 text-center wow slideInLeft">
-					<div class="detail">
-						<i class="lnr lnr-map-marker"></i>
-						<h4><span>You can find us at</span></h4>
-						<h3>Our Location</h3>
-							<p>
-								100 Corigliano <br>
-								Italy, IT 27912
-							</p>
-					</div>
-				</div>
-				<!--end location-->
-
-				<!--contact info-->
-				<div class="col-md-4 col-sm-4 text-center wow slideInUp">
-					<div class="detail">
-						<i class="lnr lnr-phone"></i>
-						<h4><span>Our mail and phone</span></h4>
-						<h3>Contacts</h3>
-						<p>
-							<abbr title="Email">E:</abbr> mail@mail.com
-							<br>
-							<abbr title="Phone">P:</abbr> 123-456-7890
-						</p>
-					</div>
-				</div>
-				<!--end contact info-->
-
-				<!--contact info-->
-				<div class="col-md-4 col-sm-4 text-center wow slideInRight">
-					<div class="detail">
-						<i class="lnr lnr-clock"></i>
-						<h4><span>We work on the following</span></h4>
-						<h3>Schedule</h3>
-						<p>
-							M-F: 8 AM - 4 PM<br>
-							Sa: 8 AM - 12 PM<br>
-							Su: Closed
-						</p>
-					</div>
-				</div>
-				<!--end contact info-->
-			</div>
-		<!-- CONTACT FORM -->
-		<div class="contact-form bottom">
-			<form id="main-contact-form" name="contact-form" method="post" action="sendemail.php">
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<div class="form-group">
-					<input type="text" name="name" id="name" class="form-control" required="required" placeholder="Name">
-				</div>
-				<div class="form-group">
-					<input type="text" name="company" id="company" class="form-control" required="required" placeholder="Company">
-				</div>
-				<div class="form-group">
-					<input type="email" name="email" id="email" class="form-control" required="required" placeholder="Email Id">
-				</div>
-			</div>
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<div class="form-group">
-					<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
-				</div>
-				<div class="form-group">
-					<button id="submit_btn" class="default-btn gray-btn"> Send <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
-				</div>
-			</div>
-			</form>
-		</div>
-	</div><!-- end container -->
-</section>
+<style>
+	.main-header, .main-footer{
+		background-color: #f7ccdb;
+	}
+	.main-footer{
+		padding-top: 2rem;
+		z-index: 1;
+	}
+	.box-header{
+		position: relative;
+	}
+</style>
 {% endblock content %}

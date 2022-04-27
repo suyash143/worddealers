@@ -6,7 +6,7 @@
     <div class="table-cell">
 
         <h3 class="box-headline">
-                <b>{{index.tagline}}</b>
+            <b>{{index.tagline}}</b>
         </h3>
         <h1>{{index.main_heading}}</h1>
 
@@ -22,50 +22,38 @@
 
 <div id="facts" class="facts mbr-box mbr-section mbr-section--relative">
     <div class="container">
-        <div class="row center">
+        <div class="row mb-3 center">
             <div class="col-md-12 col-sm-12">
                 <h2>About Us</h2>
             </div>
-            <div class="col-md-12 col-md-offset-2">
-                <h5 class="lead mb-5">{{ index.about }}</h5>
+        </div>
+        <div class="col-md-12 p-4">
+            <div class="row d-flex justify-content-center align-items-center">
+                {% for stat in index.stats.all %}
+                <div class="col-xl-3 col-lg-6">
+                    <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas {{stat.stat_icon}}"></i></div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="numscroller d-flex align-items-center mb-0" data-slno='1' data-min='0'
+                                        data-max='{{stat.stat_number}}' data-delay='10' data-increment="5">
+                                        {{stat.stat_number}}
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">{{stat.stat_text}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
-        <div class="row text-center">
-            <div class="col-xs-12 col-lg-3 col-md-3">
-                <div class="count-item">
-                    <i class="lnr lnr-clock"></i>
-                    <div class="numscroller" data-slno='1' data-min='0' data-max='4444' data-delay='10'
-                        data-increment="10">9909
-                    </div>
-                    <div class="count-name-intro">Hours</div>
-                </div>
-            </div>
-            <div class="col-xs-12  col-lg-3 col-md-3">
-                <div class="count-item">
-                    <i class="lnr lnr-rocket"></i>
-                    <div class="numscroller" data-slno='1' data-min='0' data-max='1111' data-delay='10'
-                        data-increment="5">1111
-                    </div>
-                    <div class="count-name-intro">Projects</div>
-                </div>
-            </div>
-            <div class="col-xs-12  col-lg-3 col-md-3">
-                <div class="count-item">
-                    <i class="lnr lnr-coffee-cup"></i>
-                    <div class="numscroller" data-slno='1' data-min='0' data-max='1555' data-delay='10'
-                        data-increment="5">1555
-                    </div>
-                    <div class="count-name-intro">coffe's</div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-lg-3 col-md-3">
-                <div class="count-item">
-                    <i class="lnr lnr-camera"></i>
-                    <div class="numscroller" data-slno='1' data-min='0' data-max='4444' data-delay='10'
-                        data-increment="10">4444
-                    </div>
-                    <div class="count-name-intro">Photos taken</div>
-                </div>
+        <div class="row center">
+            <div class="col-md-12 col-sm-12">
+                <h5 class="">{{ index.about }}
             </div>
         </div>
     </div>
@@ -81,37 +69,38 @@
             </div>
         </div>
 
-        
-        
+
+
         <div class="row owl-carousel owl-demo owl-theme">
             {% for member in team %}
             <!-- single member -->
             <div class="col-xl-3 col-sm-6 mb-5">
                 <div class="owl-item">
-                <div class="card d-flex flex-column align-items-center justify-content-center py-5 px-4 mx-2"><img src="{{member.image.url}}" alt="" width="100"
-                        class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
-                    <h5 class="mb-0">{{member.name}}</h5><span
-                        class="small text-uppercase text-muted">{{member.designation}}</span>
-                    <ul class="social mb-0 list-inline mt-3">
-                        {% if member.facebook_link %}
-                        <li class="list-inline-item"><a href="{{member.facebook_link}}" class="social-link"><i
-                                    class="fa-brands fa-facebook-f"></i></a></li>
-                        {% endif %}
-                        {% if member.twitter_link %}
-                        <li class="list-inline-item"><a href="{{member.twitter_link}}" class="social-link"><i
-                                    class="fa-brands fa-twitter"></i></a></li>
-                        {% endif %}
-                        {% if member.instagram_link %}
-                        <li class="list-inline-item"><a href="{{member.instagram_link}}" class="social-link"><i
-                                    class="fa-brands fa-instagram"></i></a></li>
-                        {% endif %}
-                        {% if member.linkedin_link %}
-                        <li class="list-inline-item"><a href="{{member.linkedin_link}}" class="social-link"><i
-                                    class="fa-brands fa-linkedin"></i></a></li>
-                        {% endif %}
-                    </ul>
+                    <div class="card d-flex flex-column align-items-center justify-content-center py-5 px-4 mx-2"><img
+                            src="{{member.image.url}}" alt="" width="100"
+                            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">{{member.name}}</h5><span
+                            class="small text-uppercase text-muted">{{member.designation}}</span>
+                        <ul class="social mb-0 list-inline mt-3">
+                            {% if member.facebook_link %}
+                            <li class="list-inline-item"><a href="{{member.facebook_link}}" class="social-link"><i
+                                        class="fa-brands fa-facebook-f"></i></a></li>
+                            {% endif %}
+                            {% if member.twitter_link %}
+                            <li class="list-inline-item"><a href="{{member.twitter_link}}" class="social-link"><i
+                                        class="fa-brands fa-twitter"></i></a></li>
+                            {% endif %}
+                            {% if member.instagram_link %}
+                            <li class="list-inline-item"><a href="{{member.instagram_link}}" class="social-link"><i
+                                        class="fa-brands fa-instagram"></i></a></li>
+                            {% endif %}
+                            {% if member.linkedin_link %}
+                            <li class="list-inline-item"><a href="{{member.linkedin_link}}" class="social-link"><i
+                                        class="fa-brands fa-linkedin"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
             </div>
             <!-- end single member -->
             {% endfor %}
@@ -122,7 +111,7 @@
 
 <!-- SERVICES -->
 <section id="services"
-    class="services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
+    class="pb-4 services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
     style="background-image: url(assets/img/services.jpg);">
     <div class="section-overlay"></div>
     <div class="container">
@@ -143,7 +132,7 @@
                 <h6>{{service.name | upper}}</h6>
                 <p>{{service.description}}</p>
             </div>
-         
+
             {% else %}
             <div class="col-lg-6 left col-full left-0">
                 <i class="fa-solid {{service.icon}}"></i>
@@ -164,9 +153,10 @@
             <div class="col-md-12 col-sm-12">
                 <h2>Our Clients</h2>
             </div>
-            <div id="owl-client">
+            <div class="owl-carousel owl-client">
                 {% for client in clients %}
-                <div class="item card mx-4 px-2 py-2"><img src="{{client.image.url}}" alt="{{client.name}}" style="max-width: 100%;"></div>
+                <div class="item card mx-4 px-2 py-2"><img src="{{client.image.url}}" alt="{{client.name}}"
+                        style="max-width: 100%;"></div>
                 {% endfor %}
             </div>
         </div>
@@ -175,9 +165,7 @@
 
 
 <!-- Testimonials -->
-<section id="testimonials"
-    class="testimonials "
-    style="background-image: url(assets/img/testimonials.jpg);">
+<section id="testimonials" class="pb-4 testimonials " style="background-image: url(assets/img/testimonials.jpg);">
     <div class="container">
         <div class="row center">
             <div class="col-md-12 col-sm-12">
@@ -206,34 +194,21 @@
 <section id="contact" class="contact mbr-box mbr-section mbr-section--relative mbr-section--bg-adapted">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-12 col-sm-12">
                 <h4> let's work together</h4>
                 <p class="libre-text mt-25">
                     {{ index.contact_description }}
                 </p>
+                <form action="#" method="post">
+                    <div class="input_1 col-md-6 col-sm-12">
+                        <input type="text" name="email" placeholder="Enter your email adress">
+                    </div>
 
-                <a href="contact.html" class="default-btn"> Get in touch <i class="fa fa-angle-double-right"
-                        aria-hidden="true"></i></a>
-            </div>
-            <!-- Subscribe block -->
-            <div class="col-md-6 col-sm-12">
-                <div class="newsletter">
-                    <h4>SUBSCRIBE</h4>
-                    <p class="libre-text mb-50">
-                        {{ index.subscribe_heading }}
-                    </p>
-                    <form action="#" method="post">
-                        <div class="input_1">
-                            <input type="text" name="email" placeholder="Enter your email adress">
-                        </div>
-                        <button id="submit_btn" class="default-btn"> Send <i class="fa fa-angle-double-right"
-                                aria-hidden="true"></i></button>
-
-                    </form>
-                </div>
+                    <a href="{%url 'contact'%}" class="default-btn"> Get in touch <i class="fa fa-angle-double-right"
+                            aria-hidden="true"></i></a>
+                </form>
             </div>
         </div>
-
     </div>
 </section>
 {% endblock content %}

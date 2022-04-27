@@ -5,10 +5,19 @@ from django.db import models
 
 # Create your models here.
 
+class Stat(models.Model):
+    stat_text = models.CharField(max_length=20, blank=False)
+    stat_number = models.CharField(max_length=20, blank=False)
+    stat_icon = models.CharField(max_length=20, blank=False)
+
+    def __str__(self):
+        return str(self.stat_text)
+
 class Index(models.Model):
     tagline = models.TextField(max_length=100)
     main_heading = models.TextField(max_length=100, null= True)
     about = models.TextField(max_length=500, null= True)
+    stats = models.ManyToManyField(Stat, null=True)
     team_heading = models.TextField(max_length=200, null= True)
     services_heading = models.TextField(max_length=200, null= True)
     portfolio = models.TextField(max_length=200, null= True)
