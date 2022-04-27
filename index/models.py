@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from cgitb import enable
 from turtle import heading
 from os import link
@@ -22,9 +23,8 @@ class Index(models.Model):
     services_heading = models.TextField(max_length=200, null= True)
     portfolio = models.TextField(max_length=200, null= True)
     contact_description = models.TextField(max_length=200, null= True)
-    subscribe_heading = models.TextField(max_length=100, null= True)
-    address = models.CharField(max_length=150, null= True)
-    number = models.CharField(max_length=150, null= True)
+    # address = models.CharField(max_length=150, null= True)
+    # number = models.CharField(max_length=150, null= True)
     facebook_link = models.URLField(max_length=150, null= True, blank=True)
     twitter_link = models.URLField(max_length=150, null= True, blank=True)
     linkedin_link = models.URLField(max_length=150, null= True, blank=True)
@@ -65,3 +65,12 @@ class Service(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class Contact(models.Model):
+    contact_page_heading = models.CharField(max_length=50, blank=False)
+    contact_page_para = models.CharField(max_length=50, blank=False)
+    address = models.CharField(max_length=150, null= True)
+    map_link = models.URLField(default=NULL)
+    email = models.CharField(max_length=150, null= True)
+    number = models.CharField(max_length=150, null= True)
+    work_time = models.CharField(max_length=150, null= True)

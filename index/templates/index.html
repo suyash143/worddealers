@@ -53,14 +53,14 @@
         </div>
         <div class="row center">
             <div class="col-md-12 col-sm-12">
-                <h5 class="">{{ index.about }}
+                <p class="module-subtitle mb-0">{{ index.about }}
             </div>
         </div>
     </div>
 </div>
 
 <!-- TEAM -->
-<section id="team" class="team mbr-box mbr-section mbr-section--relative pb-4">
+<section id="team" class="team mbr-box mbr-section mbr-section--relative pb-5">
     <div class="container">
         <div class="row mb-5 center">
             <div class="col-md-12 col-sm-12">
@@ -124,17 +124,17 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row d-flex justify-content-center align-item-center">
             {% for service in services %}
             {% ifequal forloop.counter|divisibleby:"2" False %}
-            <div class="col-lg-6 right col-full right-0">
+            <div class="col-lg-5 p-3 right col-full right-0 card l-bg-cherry mx-2">
                 <i class="fa-solid {{service.icon}}"></i>
                 <h6>{{service.name | upper}}</h6>
                 <p>{{service.description}}</p>
             </div>
 
             {% else %}
-            <div class="col-lg-6 left col-full left-0">
+            <div class="col-lg-5 p-3 left col-full left-0 card l-bg-cherry-invert mx-2">
                 <i class="fa-solid {{service.icon}}"></i>
                 <h6>{{service.name | upper}}</h6>
                 <p>{{service.description}}</p>

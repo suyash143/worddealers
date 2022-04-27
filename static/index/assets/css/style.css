@@ -51,6 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  
 }
 
 /* #####  text  ##### */
@@ -1044,14 +1045,13 @@ footer a:hover {
   z-index: 0;
 }
 
-/* Contcat Form CSS */
-
-  .contact-area {
-      background: url(../img/bg/contact-bg.png) no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center;
+@media (max-width: 960px) {
+  .footer-widget h4 {
+    margin-bottom: 10px;
   }
+}
+
+/* Contcat Form CSS */
   
   @media only screen and (max-width:768px) {
       .contact {
@@ -1059,6 +1059,8 @@ footer a:hover {
       }
   }
   
+
+
   .contact input {
       background: #fff;
       border: 1px solid #fff;
@@ -1142,11 +1144,15 @@ footer a:hover {
       overflow: hidden;
       margin-bottom: 10px;
       padding-left: 40px;
+      cursor: pointer;
   }
   
   @media only screen and (max-width:768px) {
       .single_address {
           padding-left: 0px;
+      }
+      .contact-icons{
+        flex-direction: column !important;
       }
   }
   
@@ -1322,22 +1328,20 @@ footer a:hover {
 }
 
 @media (max-width: 992px) {
-  footer.main-footer * {
-    text-align: center;
-  }
   footer.main-footer ul.social-icons {
     float: left;
     width: 100%;
-    text-align: center;
   }
   footer.main-footer nav.footer-nav ul li {
-    text-align: center;
     width: 100%;
   }
   footer.main-footer nav.footer-nav ul li,
   footer.main-footer nav.footer-nav ul li:first-child {
     margin-left: 0;
     margin-bottom: 20px;
+  }
+  footer.main-footer * {
+    text-align: left;
   }
 }
 
@@ -1559,7 +1563,6 @@ footer a:hover {
 
 .portfolio_item .portfolio_item_hover .item_info span {
   display: inline-block;
-  font-family: "Cantarell", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   color: #000;
@@ -1902,7 +1905,11 @@ footer a:hover {
 .contact {
   padding: 0;
   color: #000;
-  background-color: #ffbad3a8;
+  background-color: #ffbad3a8 !important;
+}
+
+.contact-box{
+  padding: 2rem;
 }
 
 .contact .bottom-right-separator {
@@ -2040,14 +2047,6 @@ ul.social-icons li {
 
 ul.social-icons li i {
   color: #f08dac;
-}
-
-@media only screen and (max-width: 992px){
-  ul.social-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 }
 
 .share-title {
@@ -2400,6 +2399,10 @@ ul.services-list li {
 
 .l-bg-cherry {
   background: linear-gradient(to right, #ffeaf2a8, #ffbad3a8) !important;
+  color: #fff;
+}
+.l-bg-cherry-invert {
+  background: linear-gradient(to left, #ffeaf2a8, #ffbad3a8) !important;
   color: #fff;
 }
 
