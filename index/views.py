@@ -5,7 +5,7 @@ def main(request):
     return render(request, 'index_main.html', {'index': models.Index.objects.all().latest('pk')})
 
 def index(request):
-    return render(request, 'index.html', {'index': models.Index.objects.all().latest('pk'), 'clients': models.Client.objects.all(), 'testimonial': models.Testimonial.objects.all(), 'team': models.Team.objects.all(), 'services': models.Service.objects.all()})
+    return render(request, 'index.html', {'index': models.Index.objects.all().latest('pk'), 'contact': models.Contact.objects.all().latest('pk'), 'clients': models.Client.objects.all(), 'testimonial': models.Testimonial.objects.all(), 'team': models.Team.objects.all(), 'services': models.Service.objects.all()})
 
 def contact(request):
-    return render(request, 'contact.html', {'index': models.Index.objects.all().latest('pk')})
+    return render(request, 'contact.html', {'index': models.Index.objects.all().latest('pk'), 'contact': models.Contact.objects.all().latest('pk')})
