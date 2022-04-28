@@ -13,16 +13,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{%static 'index/assets/css/flexslider.css'%}">
 	<link rel="stylesheet" href="{%static 'index/assets/css/animsition.min.css'%}">
-	<link rel="stylesheet" href="{%static 'index/assets/css/style.css'%}">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 	<link rel="stylesheet" href="{%static 'index/assets/css/owl.carousel.css'%}">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 	<link rel="stylesheet" href="{%static 'index/assets/css/owl.theme.css'%}">
-
+	
 	<!-- Fontawesome -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-		integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<link rel="stylesheet" href="{%static 'index/assets/css/style.css'%}">
 </head>
 
 <body class="animsition">
@@ -33,7 +36,7 @@
 	<span class="frame-line left-frame visible-lg"></span> -->
 	<!-- HEADER  -->
 	<header class="main-header">
-		<div class="container-fluid">
+		<div class="container-fluid px-0">
 			<!-- box header -->
 			<div class="box-header d-flex flex-row align-items-center">
 				<div class="box-logo">
@@ -53,18 +56,32 @@
 				<ul class="box-primary-nav">
 					<li class="box-label">WordDealers</li>
 
-					<li><a data-smooth="#" href="#">Home</a> <i class="lnr lnr-home"></i></li>
-					<li><a data-smooth="#services" href="#services">Services</a></li>
-					<li><a data-smooth="#contact" href="#contact">Contact</a></li>
+					<li><a data-smooth="#" href="{% url 'index' %}#">Home</a> <i class="lnr lnr-home"></i></li>
+					<li><a data-smooth="#services" href="{% url 'index' %}#services" onclick="
+						$('.box-menu-icon').toggleClass('is-clicked'); 
+						$('.box-header').toggleClass('menu-is-open');
+						
+						//in firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
+						if( $('.box-primary-nav').hasClass('is-visible') ) {
+							$('.box-primary-nav').removeClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
+								$('body').removeClass('overflow-hidden');
+							});
+						} else {
+							$('.box-primary-nav').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
+								$('body').addClass('overflow-hidden');
+							});	
+						}
+					">Services</a></li>
+					<li><a data-smooth="#contact" href="{% url 'contact' %}">Contact</a></li>
 
 					<li class="box-label">SOCIAL</li>
 
-					<li class="box-social"><a href="#"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+					<li class="box-social"><a href="{{index.facebook_link}}"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
 					</li>
-					<li class="box-social"><a href="#"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+					<li class="box-social"><a href="{{index.instagram_link}}"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
 					</li>
-					<li class="box-social"><a href="#"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
-					<li class="box-social"><a href="#"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+					<li class="box-social"><a href="{{index.twitter_link}}"><i class="fa-brands fa-twitter" aria-hidden="true"></i></a></li>
+					<li class="box-social"><a href="{{index.linkedin_link}}"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
 					</li>
 				</ul>
 			</nav>
@@ -80,7 +97,7 @@
 
 
 	<!-- Footer -->
-	<footer class="main-footer">
+	<footer class="main-footer pt-2">
 		<div class="container">
 			<div class="row mt-25 footer-widgets">
 				<!-- Start Contact Widget -->
@@ -91,16 +108,16 @@
 						<h4>Social Media</h4>
 						<ul class="social-icons">
 							<li>
-								<a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
+								<a class="facebook" href="{{index.facebook_link}}"><i class="fa-brands fa-facebook"></i></a>
 							</li>
 							<li>
-								<a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+								<a class="twitter" href="{{index.twitter_link}}"><i class="fa-brands fa-twitter"></i></a>
 							</li>
 							<li>
-								<a class="linkdin" href="#"><i class="fa-brands fa-linkedin"></i></a>
+								<a class="linkdin" href="{{index.linkedin_link}}"><i class="fa-brands fa-linkedin"></i></a>
 							</li>
 							<li>
-								<a class="instgram" href="#"><i class="fa-brands fa-instagram"></i></a>
+								<a class="instgram" href="{{index.instagram_link}}"><i class="fa-brands fa-instagram"></i></a>
 							</li>
 						</ul>
 					</div>
@@ -109,10 +126,10 @@
 
 				<!-- Contact Us -->
 				<div class="col-md-3 col-xs-12">
-					<div class="footer-widget twitter-widget">
+					<div class="footer-widget twitter-widget mb-3">
 						<h4>Contact Us</h4>
-						Address: {{index.address}}<br>
-						Phone: {{index.number}}
+						Address: {{contact.address}}<br>
+						Phone: {{contact.number}}
 					</div>
 				</div><!-- .col-md-3 -->
 				<!-- End Twitter Widget -->
@@ -123,9 +140,9 @@
 						<h4>Company</h4>
 						<ul class="footer-links">
 							<li><a data-smooth="#" href="#">About</a></li>
-							<li><a data-smooth="#services" href="#services">Services</a></li>
-							<li><a data-smooth="#clients" href="#clients">Our Clients</a></li>
-							<li><a data-smooth="#team" href="#team">Team</a></li>
+							<li><a data-smooth="#services" href="{%url 'index'%}#services">Services</a></li>
+							<li><a data-smooth="#clients" href="{%url 'index'%}#clients">Our Clients</a></li>
+							<li><a data-smooth="#team" href="{%url 'index'%}#team">Team</a></li>
 						</ul>
 					</div>
 				</div><!-- .col-md-3 -->
@@ -166,7 +183,7 @@
 			$('.flexslider').flexslider({
 				animation: "fade",
 				directionNav: false,
-				controlNav: false,
+				controlNav: true,
 				keyboardNav: true,
 				slideToStart: 0,
 				animationLoop: true,
