@@ -126,7 +126,7 @@
         </div>
         <div class="row d-flex justify-content-center align-item-center">
             {% for service in services %}
-            {% ifequal forloop.counter|divisibleby:"2" False %}
+            {% if forloop.counter|divisibleby:"2" == False%}
             <div class="col-lg-5 p-3 right col-full right-0 card l-bg-cherry mx-2">
                 <i class="fa-solid {{service.icon}}"></i>
                 <h6>{{service.name | upper}}</h6>
@@ -139,7 +139,7 @@
                 <h6>{{service.name | upper}}</h6>
                 <p>{{service.description}}</p>
             </div>
-            {% endifequal %}
+            {% endif %}
             {% endfor %}
         </div>
     </div>
