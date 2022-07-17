@@ -45,13 +45,12 @@ theme.
 }
 
 body {
-  background-color: #f08dac;  /*#492a51*/
+  background-color: #c18de5a1;  /*#492a51*/
   color: #000;
   font: 400 14px/1.8 "Cantarell", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  
 }
 
 /* #####  text  ##### */
@@ -676,7 +675,7 @@ ul.tags li a:hover {
 .box-header.is-fixed {
   position: fixed;
   top: -80px;
-  background-color: #ffbad3f6;
+  background-color: #9c64c1eb;
   -webkit-transition: -webkit-transform 0.3s
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -1620,7 +1619,7 @@ footer a:hover {
 }
 
 .team {
-  background-color: #ffbad3a8;
+  background-color: #daa7fc;
 }
 
 .process-numbers {
@@ -1819,7 +1818,7 @@ footer a:hover {
 }
 
 #clients {
-  background-color: #ffbad3a8;
+  background-color: #daa7fc;
   padding: 0 0 0px;
 }
 
@@ -1904,7 +1903,7 @@ footer a:hover {
 .contact {
   padding: 0;
   color: #000;
-  background-color: #ffbad3a8 !important;
+  background-color: #daa7fc !important;
 }
 
 .contact-box{
@@ -2397,11 +2396,11 @@ ul.services-list li {
 }
 
 .l-bg-cherry {
-  background: linear-gradient(to right, #ffeaf2a8, #ffbad3a8) !important;
+  background: linear-gradient(to right, #ffeaf2a8, #d7b7ee) !important;
   color: #fff;
 }
 .l-bg-cherry-invert {
-  background: linear-gradient(to left, #ffeaf2a8, #ffbad3a8) !important;
+  background: linear-gradient(to left, #ffeaf2a8, #d7b7ee) !important;
   color: #fff;
 }
 
@@ -2418,7 +2417,7 @@ ul.services-list li {
   right: -5px;
   top: 20px;
   opacity: 0.5;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* Cards CSS END */
