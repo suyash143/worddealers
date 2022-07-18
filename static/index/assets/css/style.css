@@ -1,33 +1,4 @@
-/*
 
-@Author: Tanislav Robert Marian.
-@URL: http://www.woctech.ro
-
-This file contains the styling for the actual theme, this
-is the file you need to edit to change the look of the
-theme.
-
-
-// Table of contents //
-
-		Body
-	00.  General
-	01.  Header & footer
-	02.  Homepage slider
-	03.  About us
-	04.  Facts
-	05.  Services
-	06.  Portfolio
-	07.  Team
-	08.  Pricing
-	09.  Testimonials
-	10. Blog
-	11. Contact & Subscribe
-	12. Single Project
-	13. Services page
-	14. Contact page
-
-*/
 @import "https://fonts.googleapis.com/css?family=Cantarell:400,700";
 
 /* --------------------------------
@@ -39,19 +10,18 @@ theme.
 * {
   outline: 0;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #f08dac;  /*#492a51*/
+  background-color: #c18de5a1;  /*#492a51*/
   color: #000;
   font: 400 14px/1.8 "Cantarell", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  
 }
 
 /* #####  text  ##### */
@@ -314,7 +284,7 @@ a {
   transition: all 0.3s ease-in-out;
   right: 30px;
   top: 0;
-  color: #f08dac;
+  color: #9c64c1eb;
 }
 .gray-btn {
   color: #777 !important;
@@ -615,7 +585,7 @@ ul.tags li a:hover {
   left: 0;
   right: 0;
   display: block;
-  background: #f7ccdb;
+  background: #9c64c1eb;
   z-index: 999999;
 }
 
@@ -676,7 +646,7 @@ ul.tags li a:hover {
 .box-header.is-fixed {
   position: fixed;
   top: -80px;
-  background-color: #ffbad3f6;
+  background-color: #9c64c1eb;
   -webkit-transition: -webkit-transform 0.3s
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -689,7 +659,7 @@ ul.tags li a:hover {
 }
 
 .box-header.menu-is-open {
-  background-color: #ffbad3a8;
+  background-color: #9c64c1eb;
 }
 
 .box-logo {
@@ -799,7 +769,7 @@ ul.tags li a:hover {
   top: 0;
   height: 100%;
   width: 100%;
-  background: #f08dacec;
+  background: #c18de5f5;
   z-index: 1;
   text-align: center;
   padding: 50px 0;
@@ -877,7 +847,7 @@ ul.tags li a:hover {
 }
 
 .box-primary-nav li {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* box-intro
@@ -912,7 +882,7 @@ b {
 }
 
 b i:last-child {
-  color: #ffbad3a8 !important;
+  color: #eacdff  !important;
 }
 
 .box-intro h1 {
@@ -1015,6 +985,7 @@ b i:last-child {
 
 footer.main-footer {
   z-index: 0;
+  background-color: #eacdff;
 }
 
 footer p {
@@ -1127,7 +1098,7 @@ footer a:hover {
       -webkit-transition: all 0.3s ease 0s;
       -o-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s;
-      background: #f7ccdb;
+      background: #232434;
       cursor: pointer;
       width: 100%;
   }
@@ -1158,7 +1129,7 @@ footer a:hover {
   
   .single_address i {
       background: #f6f6f6;
-      color: #f08dac;
+      color: #232434;
       border-radius: 30px;
       width: 60px;
       height: 60px;
@@ -1175,7 +1146,7 @@ footer a:hover {
   }
   
   .single_address:hover i {
-      background: #f7ccdb;
+      background: #eacdff;
       color: #fff;
   }
   
@@ -1237,46 +1208,6 @@ footer a:hover {
 
 .contact-widget ul.social-icons li a:hover {
   text-decoration: none;
-}
-
-.contact-widget ul.social-icons li a.facebook:hover i {
-  color: #507cbe;
-}
-
-.contact-widget ul.social-icons li a.twitter:hover i {
-  color: #63cdf1;
-}
-
-.contact-widget ul.social-icons li a.google:hover i {
-  color: #f16261;
-}
-
-.contact-widget ul.social-icons li a.dribbble:hover i {
-  color: #e46387;
-}
-
-.contact-widget ul.social-icons li a.linkdin:hover i {
-  color: #90cadd;
-}
-
-.contact-widget ul.social-icons li a.tumblr:hover i {
-  color: #4d7ea3;
-}
-
-.contact-widget ul.social-icons li a.flickr:hover i {
-  color: #e474af;
-}
-
-.contact-widget ul.social-icons li a.instgram:hover i {
-  color: rgb(255, 46, 98);
-}
-
-.contact-widget ul.social-icons li a.vimeo:hover i {
-  color: #87d3e0;
-}
-
-.contact-widget ul.social-icons li a.skype:hover i {
-  color: #36c4f3;
 }
 
 .contact-widget span {
@@ -1620,7 +1551,7 @@ footer a:hover {
 }
 
 .team {
-  background-color: #ffbad3a8;
+  background-color: #eacdff;
 }
 
 .process-numbers {
@@ -1819,7 +1750,7 @@ footer a:hover {
 }
 
 #clients {
-  background-color: #ffbad3a8;
+  background-color: #eacdff;
   padding: 0 0 0px;
 }
 
@@ -1903,8 +1834,8 @@ footer a:hover {
 
 .contact {
   padding: 0;
-  color: #000;
-  background-color: #ffbad3a8 !important;
+  color: #000000;
+  background-color: #eacdff !important;
 }
 
 .contact-box{
@@ -2397,11 +2328,11 @@ ul.services-list li {
 }
 
 .l-bg-cherry {
-  background: linear-gradient(to right, #ffeaf2a8, #ffbad3a8) !important;
+  background: linear-gradient(to right, #ffeaf2a8, #d7b7ee) !important;
   color: #fff;
 }
 .l-bg-cherry-invert {
-  background: linear-gradient(to left, #ffeaf2a8, #ffbad3a8) !important;
+  background: linear-gradient(to left, #ffeaf2a8, #d7b7ee) !important;
   color: #fff;
 }
 
@@ -2418,7 +2349,7 @@ ul.services-list li {
   right: -5px;
   top: 20px;
   opacity: 0.5;
-  z-index: -1;
+  z-index: 1;
 }
 
 /* Cards CSS END */

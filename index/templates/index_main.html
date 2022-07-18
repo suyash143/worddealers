@@ -54,24 +54,12 @@
 			<!-- nav -->
 			<nav>
 				<ul class="box-primary-nav">
-					<li class="box-label">WordDealers</li>
-
 					<li><a data-smooth="#" href="{% url 'index' %}#">Home</a> <i class="lnr lnr-home"></i></li>
-					<li><a data-smooth="#services" href="{% url 'index' %}#services" onclick="
-						$('.box-menu-icon').toggleClass('is-clicked'); 
-						$('.box-header').toggleClass('menu-is-open');
-						
-						//in firefox transitions break when parent overflow is changed, so we need to wait for the end of the trasition to give the body an overflow hidden
-						if( $('.box-primary-nav').hasClass('is-visible') ) {
-							$('.box-primary-nav').removeClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
-								$('body').removeClass('overflow-hidden');
-							});
-						} else {
-							$('.box-primary-nav').addClass('is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
-								$('body').addClass('overflow-hidden');
-							});	
-						}
-					">Services</a></li>
+
+					<li><a data-smooth="#" href="#">About</a></li>
+					<li><a data-smooth="#services" href="{%url 'index'%}#services">Services</a></li>
+					<li><a data-smooth="#clients" href="{%url 'index'%}#clients">Our Clients</a></li>
+					<li><a data-smooth="#team" href="{%url 'index'%}#team">Team</a></li>
 					<li><a data-smooth="#contact" href="{% url 'contact' %}">Contact</a></li>
 
 					<li class="box-label">SOCIAL</li>
@@ -143,6 +131,7 @@
 							<li><a data-smooth="#services" href="{%url 'index'%}#services">Services</a></li>
 							<li><a data-smooth="#clients" href="{%url 'index'%}#clients">Our Clients</a></li>
 							<li><a data-smooth="#team" href="{%url 'index'%}#team">Team</a></li>
+							<li><a data-smooth="#team" href="{%url 'contact'%}">Contact Us</a></li>
 						</ul>
 					</div>
 				</div><!-- .col-md-3 -->
