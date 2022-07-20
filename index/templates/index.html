@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="col-md-12 p-4">
-            <div class="row d-flex justify-content-center align-items-center">
+            <!-- <div class="row d-flex justify-content-center align-items-center">
                 {% for stat in index.stats.all %}
                 <div class="col-xl-3 col-lg-6">
                     <div class="card l-bg-cherry">
@@ -49,7 +49,25 @@
                     </div>
                 </div>
                 {% endfor %}
-            </div>
+            </div> -->
+            <div class="row">
+                <div class="col-12">
+                  <div class="card l-bg-cherry-2">
+                    <div class="card-content">
+                      <div class="row">
+                        {% for stat in index.stats.all %}
+                        <div class="col-lg-3 col-sm-12 border-right-primary border-right-lighten-3">
+                          <div class="card-body text-center">
+                            <h1 class="display-4"><i class="icon-camera font-large-2"></i>{{stat.stat_number}}</h1>
+                            <span class="">{{stat.stat_text}}</span>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
         <div class="row center">
             <div class="col-md-12 col-sm-12">
@@ -111,8 +129,7 @@
 
 <!-- SERVICES -->
 <section id="services"
-    class="pb-4 services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
-    style="background-image: url(assets/img/services.jpg);">
+    class="pb-4 services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background">
     <div class="section-overlay"></div>
     <div class="container">
         <div class="row center">
@@ -145,7 +162,6 @@
     </div>
 </section>
 
-
 <!-- CLIENTS -->
 <div id="clients" class="clients pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
     <div class="container">
@@ -165,29 +181,126 @@
 
 
 <!-- Testimonials -->
-<section id="testimonials" class="pb-4 testimonials " style="background-image: url(assets/img/testimonials.jpg);">
-    <div class="container">
-        <div class="row center">
-            <div class="col-md-12 col-sm-12">
-                <h2>Testimonials</h2>
-            </div>
-        </div>
+<section id="testimoials" class="pb-3" >
+    <div class="container-xl">
         <div class="row">
-            <div class="col-md-12">
-                <div class="flexslider">
-                    <ul class="slides">
-                        {% for testimonial in testimonial %}
-                        <li>
-                            <div class="avatar"><img src="{{ testimonial.image.url }}" alt="Testimonial Avatar"></div>
-                            <h5>"{{testimonial.testimonial}}"</h5>
-                            <p class="author">{{testimonial.name}}, {{testimonial.designation}}.</p>
-                        </li>
+            <div class="col-lg-8 mx-auto">
+                <h2>Testimonials</h2>
+                <div id="myCarousel" class="carousel card p-4 slide" data-ride="carousel">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>   
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        {% for testimonial in testimonials1 %}
+                        <div class="carousel-item active">
+                            <div class="img-box"><img src="{{testimonial.image.url}}" alt=""></div>
+                            <p class="testimonial">{{testimonial.testimonial}}</p>
+                            <p class="overview"><b>{{testimonial.name}}</b>, {{testimonial.designation}}</p>
+                        </div>
                         {% endfor %}
-                    </ul>
+                        {% for testimonial in testimonials %}
+                        <div class="carousel-item">
+                            <div class="img-box"><img src="{{testimonial.image.url}}" alt=""></div>
+                            <p class="testimonial">{{testimonial.testimonial}}</p>
+                            <p class="overview"><b>{{testimonial.name}}</b>, {{testimonial.designation}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+    .carousel {
+	padding: 0 70px;
+}
+.carousel .carousel-item {
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+	min-height: 290px;
+}
+.carousel .carousel-item .img-box {
+	width: 135px;
+	height: 135px;
+	margin: 0 auto;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial {
+	padding: 30px 0 10px;
+}
+.carousel .overview {	
+	font-style: italic;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: #000;
+}
+.carousel-control-prev, .carousel-control-next {
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	top: 50%;
+	background: none;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 68px;
+	line-height: 42px;
+	position: absolute;
+	display: inline-block;
+	color: rgba(0, 0, 0, 0.8);
+	text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+.carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 12px;
+	height: 12px;
+	margin: 1px 3px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {	
+	background: #999;
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+.carousel-indicators li.active {	
+	background: #555;		
+	box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+}
+</style>
+
+
+<style>
+    #services, #testimoials {
+  background-image: url("{% static 'images/services.png' %}");
+  background-repeat: no-repeat;
+}
+
+</style>
 
 {% endblock content %}

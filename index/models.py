@@ -38,6 +38,7 @@ class Client(models.Model):
         return str(self.name)
 
 class Testimonial(models.Model):
+    id = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=50)
     designation = models.CharField(max_length=50)
     image = models.ImageField(upload_to='testimonial', null=True, blank=True)
