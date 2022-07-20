@@ -50,7 +50,7 @@ class Testimonial(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=50)
     designation = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='team', null=True, blank=True)
+    image = models.ImageField(upload_to='team', null=True, blank=True, default='images/team/worddealers.png')
     facebook_link = models.URLField(max_length=100, null=True, blank=True)
     twitter_link = models.URLField(max_length=100, null=True, blank=True)
     linkedin_link = models.URLField(max_length=100, null=True, blank=True)
