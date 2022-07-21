@@ -3,6 +3,7 @@ from cgitb import enable
 from turtle import heading
 from os import link
 from django.db import models
+from PIL import Image
 
 # Create your models here.
 
@@ -58,6 +59,29 @@ class Team(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+    def save(self):
+        super().save()
+        print("Yeah")
+        divisor=1
+        alignx=0.5
+        aligny=0.5
+        aspect=1
+        img = Image.open(self.image.path)
+
+        if img.width / img.height > aspect / divisor:
+            newwidth = int(img.height * (aspect / divisor))
+            newheight = img.height
+        else:
+            newwidth = img.width
+            newheight = int(img.width / (aspect / divisor))
+        imgp = img.crop((alignx * (img.width - newwidth),
+                         aligny * (img.height - newheight),
+                         alignx * (img.width - newwidth) + newwidth,
+                         aligny * (img.height - newheight) + newheight))
+
+        imgp.save(self.image.path)
+
 
 class Service(models.Model):
     name = models.CharField(max_length=50, blank=False)
