@@ -27,29 +27,24 @@
                 <h2>About Us</h2>
             </div>
         </div>
-        <div class="col-md-12 p-4">
-            <div class="row d-flex justify-content-center align-items-center">
-                {% for stat in index.stats.all %}
-                <div class="col-xl-3 col-lg-6">
-                    <div class="card l-bg-cherry">
-                        <div class="card-statistic-3 p-4">
-                            <div class="card-icon card-icon-large"><i class="fas {{stat.stat_icon}}"></i></div>
-                            <div class="row align-items-center mb-2 d-flex">
-                                <div class="col-8">
-                                    <h2 class="numscroller d-flex align-items-center mb-0" data-slno='1' data-min='0'
-                                        data-max='{{stat.stat_number}}' data-delay='10' data-increment="5">
-                                        {{stat.stat_number}}
-                                    </h2>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h5 class="card-title mb-0">{{stat.stat_text}}</h5>
-                            </div>
+            <div class="row">
+                <div class="col-12">
+                  <div class="card l-bg-cherry-2">
+                    <div class="card-content">
+                      <div class="row">
+                        {% for stat in index.stats.all %}
+                        <div class="col-lg-3 col-sm-12">
+                          <div class="card-body text-center">
+                            <h1 class="display-4"><i class="icon-camera font-large-2"></i>{{stat.stat_number}}</h1>
+                            <span class="">{{stat.stat_text}}</span>
+                          </div>
                         </div>
+                        {% endfor %}
+                      </div>
                     </div>
+                  </div>
                 </div>
-                {% endfor %}
-            </div>
+              </div>
         </div>
         <div class="row center">
             <div class="col-md-12 col-sm-12">
@@ -75,8 +70,8 @@
             {% for member in team %}
             <!-- single member -->
             <div class="col-xl-3 col-sm-6 mb-5">
-                <div class="owl-item">
-                    <div class="card d-flex flex-column align-items-center justify-content-center py-5 px-4 mx-2"><img
+                <div class="owl-item" style="min-height: 100%;">
+                    <div class="card d-flex flex-column align-items-center justify-content-center py-5 px-4 mx-2" style="max-height:300px"><img
                             src="{{member.image.url}}" alt="" width="100"
                             class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
                         <h5 class="mb-0">{{member.name}}</h5><span
@@ -111,8 +106,7 @@
 
 <!-- SERVICES -->
 <section id="services"
-    class="pb-4 services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background"
-    style="background-image: url(assets/img/services.jpg);">
+    class="pb-4 services mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background">
     <div class="section-overlay"></div>
     <div class="container">
         <div class="row center">
@@ -145,7 +139,6 @@
     </div>
 </section>
 
-
 <!-- CLIENTS -->
 <div id="clients" class="clients pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
     <div class="container">
@@ -165,29 +158,59 @@
 
 
 <!-- Testimonials -->
-<section id="testimonials" class="pb-4 testimonials " style="background-image: url(assets/img/testimonials.jpg);">
-    <div class="container">
-        <div class="row center">
-            <div class="col-md-12 col-sm-12">
-                <h2>Testimonials</h2>
-            </div>
-        </div>
+<section id="testimoials" class="pb-3" >
+    <div class="container-xl">
         <div class="row">
-            <div class="col-md-12">
-                <div class="flexslider">
-                    <ul class="slides">
-                        {% for testimonial in testimonial %}
-                        <li>
-                            <div class="avatar"><img src="{{ testimonial.image.url }}" alt="Testimonial Avatar"></div>
-                            <h5>"{{testimonial.testimonial}}"</h5>
-                            <p class="author">{{testimonial.name}}, {{testimonial.designation}}.</p>
-                        </li>
+            <div class="col-lg-8 mx-auto">
+                <h2>Testimonials</h2>
+                <div id="myCarousel" class="carousel card p-4 slide" data-ride="carousel">
+                    <!-- Carousel indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>   
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        {% for testimonial in testimonials1 %}
+                        <div class="carousel-item active">
+                            <div class="img-box"><img src="{{testimonial.image.url}}" alt=""></div>
+                            <p class="testimonial">{{testimonial.testimonial}}</p>
+                            <p class="overview"><b>{{testimonial.name}}</b>, {{testimonial.designation}}</p>
+                        </div>
                         {% endfor %}
-                    </ul>
+                        {% for testimonial in testimonials %}
+                        <div class="carousel-item">
+                            <div class="img-box"><img src="{{testimonial.image.url}}" alt=""></div>
+                            <p class="testimonial">{{testimonial.testimonial}}</p>
+                            <p class="overview"><b>{{testimonial.name}}</b>, {{testimonial.designation}}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<style>
+ 
+</style>
+
+
+<style>
+    #services, #testimoials {
+  background-image: url("{% static 'images/services.png' %}");
+  background-repeat: no-repeat;
+}
+
+</style>
 
 {% endblock content %}
