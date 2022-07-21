@@ -665,7 +665,7 @@ ul.tags li a:hover {
 .box-logo {
   display: block;
   padding: 20px 20px 20px;
-  margin-left: 50px;
+  /* margin-left: 50px; */
 }
 
 .box-primary-nav-trigger {
@@ -2413,3 +2413,17 @@ ul.services-list li {
 }
 
 /* Cards CSS END */
+
+/* Responsive */
+
+@media (max-width: 575px){
+.container {
+    max-width: 320px;
+}
+.box-logo{
+  margin-left: 0;
+}
+.box-primary-nav-trigger{
+  right: 0;
+}
+}

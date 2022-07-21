@@ -113,16 +113,30 @@
 			}
 		});
 
-
-		var owl = $('.owl-carousel');
-		owl.owlCarousel({
+		$('.owl-carousel').owlCarousel({
 			items: 4,
 			loop: true,
 			nav:true,
 			autoPlay: true,
 			autoPlay: 6000,
-			loop:true,
-			});
+			margin:10,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:1,
+					nav:true
+				},
+				600:{
+					items:3,
+					nav:false
+				},
+				1000:{
+					items:5,
+					nav:true,
+					loop:false
+				}
+			}
+		})
 
 		$("#owl-client").owlCarousel({
 		 autoPlay: 3000, //Set AutoPlay to 3 seconds
