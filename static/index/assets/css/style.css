@@ -11,7 +11,7 @@
 * {
   outline: 0;
   padding: 0;
-  /* margin: 0; */
+  margin: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -858,7 +858,6 @@ ul.tags li a:hover {
   display: table;
   height: 100vh;
   min-width: 100%;
-  background-image: url(../img/header.png);
   background-attachment: fixed;
   background-position: center center;
   -webkit-background-size: cover;
@@ -1739,7 +1738,7 @@ footer a:hover {
   /* margin-bottom: 30px; */
 }
 
-#clients {
+#clients, #getintouch {
   background-color: #eacdff;
   padding: 0 0 0px;
 }
@@ -1817,7 +1816,7 @@ footer a:hover {
 }
 
 .carousel {
-	padding: 0 70px;
+	/* padding: 0 70px; */
 }
 .carousel .carousel-item {
 	color: #999;
