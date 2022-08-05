@@ -1738,9 +1738,14 @@ footer a:hover {
   /* margin-bottom: 30px; */
 }
 
-#clients, #getintouch {
+#clients {
   background-color: #eacdff;
   padding: 0 0 0px;
+}
+
+#getintouch{
+  background-color: #eacdff;
+  border-bottom: 2px solid #fff;
 }
 
 .svgcolor-light,

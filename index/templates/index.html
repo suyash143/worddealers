@@ -227,11 +227,11 @@
 <!-- CLIENTS -->
 <div id="getintouch" class=" pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
     <div class="container">
-        <div class="row center">
-            <div class="col-md-12 col-sm-12">
-                <h2>Get in Touch</h2>
+        <div class=" d-flex justify-content-between align-items-center pt-4">
+            <div class="">
+                <h3>Get in Touch</h3>
             </div>
-
+            <div ><a href="{%url 'contact'%}" class="getintouch-btn">Contact Us</a></div>
         </div>
     </div>
 </div>
@@ -244,6 +244,21 @@
     #services, #testimoials {
   background-image: url("{% static 'images/services.png' %}");
   background-repeat: no-repeat;
+}
+
+.getintouch-btn{
+    text-decoration: none;
+    color: #fff;
+    background-color: #9c64c1;
+    padding: 1rem;
+    border-radius: 15px;
+    transition: transform .2s ease 0s;
+}
+
+.getintouch-btn:hover{
+    color: #fff;
+    text-decoration: none;
+    transform: scale(2);
 }
 
 </style>
