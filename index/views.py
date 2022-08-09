@@ -10,10 +10,6 @@ def main(request):
 
 def index(request):
     return render(request, 'index.html', {'index': models.Index.objects.all().latest('pk'), 'contact': models.Contact.objects.all().latest('pk'), 'clients': models.Client.objects.all(), 'testimonials1': models.Testimonial.objects.filter(id='1'),'testimonials': models.Testimonial.objects.all(), 'team': models.Team.objects.all(), 'services': models.Service.objects.all()})
-
-def clients(request):
-    return render(request, 'clients.html', {'index': models.Index.objects.all().latest('pk'), 'clients': models.Client.objects.all(), 'contact': models.Contact.objects.all().latest('pk')})
-
 def contact(request):
     if request.method == 'POST':
         name = request.POST['name']
