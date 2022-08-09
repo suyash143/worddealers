@@ -3,6 +3,33 @@
 {% block content %}
 <!-- box-intro -->
 <section class="box-intro">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="position: relative;">
+            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/header.png' %}" alt="First slide">
+            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
+
+                <h3 class="box-headline">
+                    <b>{{index.tagline}}</b>
+                </h3>
+                <h1>{{index.main_heading}}</h1>
+        
+            </div>
+          </div>
+          <div class="carousel-item" style="position: relative;">
+            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/contact_header.png' %}" alt="First slide">
+            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
+
+                <h3 class="box-headline">
+                    <b>{{index.tagline}}</b>
+                </h3>
+                <h1>{{index.main_heading}}</h1>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- 
     <div class="table-cell">
 
         <h3 class="box-headline">
@@ -10,11 +37,7 @@
         </h3>
         <h1>{{index.main_heading}}</h1>
 
-    </div>
-
-    <div class="mouse">
-        <div class="scroll"></div>
-    </div>
+    </div> -->
 </section>
 <!-- end box-intro -->
 
@@ -33,7 +56,7 @@
                     <div class="card-content">
                       <div class="row">
                         {% for stat in index.stats.all %}
-                        <div class="col-lg-3 col-sm-12">
+                        <div class="col-lg-4 col-sm-12">
                           <div class="card-body text-center">
                             <h1 class="display-4"><i class="icon-camera font-large-2"></i>{{stat.stat_number}}</h1>
                             <span class="">{{stat.stat_text}}</span>
@@ -144,7 +167,7 @@
     <div class="container">
         <div class="row center">
             <div class="col-md-12 col-sm-12">
-                <h2>Our Clients</h2>
+                <a href="{% url 'clients' %}"><h2>Our Clients</h2></a>
             </div>
             <div class="owl-carousel owl-client">
                 {% for client in clients %}
@@ -200,6 +223,18 @@
     </div>
 </section>
 
+
+<!-- CLIENTS -->
+<div id="getintouch" class=" pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
+    <div class="container">
+        <div class=" d-flex justify-content-between align-items-center pt-4">
+            <div class="">
+                <h3>Get in Touch</h3>
+            </div>
+            <div ><a href="{%url 'contact'%}" class="getintouch-btn">Contact Us</a></div>
+        </div>
+    </div>
+</div>
 <style>
  
 </style>
@@ -209,6 +244,21 @@
     #services, #testimoials {
   background-image: url("{% static 'images/services.png' %}");
   background-repeat: no-repeat;
+}
+
+.getintouch-btn{
+    text-decoration: none;
+    color: #fff;
+    background-color: #9c64c1;
+    padding: 1rem;
+    border-radius: 15px;
+    transition: transform .2s ease 0s;
+}
+
+.getintouch-btn:hover{
+    color: #fff;
+    text-decoration: none;
+    transform: scale(2);
 }
 
 </style>
