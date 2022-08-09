@@ -81,50 +81,20 @@
         </div>
 
         <div class="row owl-carousel owl-demo owl-theme">
+            {% for achievement in achievements %}
             <div class="col-md-12 col-md-offset-2 col-sm-12">
 
                 <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
+                    <div class="card-custom-img" style="background-image: url({{ achievement.image }});"></div>
                     <div class="card-body" style="overflow-y: auto">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quod.</p>
+                      <h4 class="card-title">{{ achievement.title }}</h4>
+                      <p class="card-text">{{ achievement.text }}</p>
                     </div>
                   </div>
         
               </div>
-              <div class="col-md-12 col-md-offset-2 col-sm-12">
+            {% endfor %}
 
-                <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
-                    <div class="card-body" style="overflow-y: auto">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quod.</p>
-                    </div>
-                  </div>
-        
-              </div>
-              <div class="col-md-12 col-md-offset-2 col-sm-12">
-
-                <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
-                    <div class="card-body" style="overflow-y: auto">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quod.</p>
-                    </div>
-                  </div>
-        
-              </div>
-              <div class="col-md-12 col-md-offset-2 col-sm-12">
-
-                <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url(http://res.cloudinary.com/d3/image/upload/c_scale,q_auto:good,w_1110/trianglify-v1-cs85g_cc5d2i.jpg);"></div>
-                    <div class="card-body" style="overflow-y: auto">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, quod.</p>
-                    </div>
-                  </div>
-        
-              </div>
         </div>
   </div>
 </div>

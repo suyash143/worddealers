@@ -48,6 +48,16 @@ class Testimonial(models.Model):
     def __str__(self):
         return str(self.name)
 
+
+class Achievements(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='achievements', null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+
 class Team(models.Model):
     name = models.CharField(max_length=50)
     designation = models.CharField(max_length=50)
