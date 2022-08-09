@@ -1,0 +1,97 @@
+{% extends 'index_main.html' %}
+{%load static%}
+{% block content %}
+
+<section id="clients" class="section-bg">
+
+    <div class="container">
+
+      <div class="section-header">
+        <h1 style="text-align:center;margin-bottom:1rem;">Our Clients</h1>
+      </div>
+
+      <div class="row no-gutters clients-wrap clearfix wow fadeInUp d-flex justify-content-center" style="visibility: visible; animation-name: fadeInUp;">
+        {% for client in clients %}
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="client-logo">
+            <img src="{{client.image.url}}" class="img-fluid" alt="">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </section>
+
+<style>
+    body{
+        background-color:#fff;
+    }
+    #clients{
+        background-color: #c18de5a1;
+        {% comment %} background-image: url("{% static 'images/services.png' %}"); {% endcomment %}
+        background-repeat: no-repeat;
+    }
+
+	.main-header,
+	.main-footer {
+		background-color: #9c64c1eb;
+	}
+
+	.main-footer {
+		padding-top: 2rem;
+		z-index: 1;
+	}
+
+	.box-header {
+		position: relative;
+	}
+
+.section-header p {
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    padding-bottom: 60px;
+    color: #556877;
+    width: 50%;
+}
+
+#clients {
+    padding: 60px 0;
+    
+}
+#clients .clients-wrap {
+    border-top: 1px solid #d6eaff;
+    {% comment %} border-left: 1px solid #d6eaff; {% endcomment %}
+    margin-bottom: 30px;
+}
+
+#clients .client-logo {
+    padding: 64px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-right: 1px solid #d6eaff;
+    border-bottom: 1px solid #d6eaff;
+    overflow: hidden;
+    background: #fff;
+    height: 160px;
+}
+
+#clients img {
+    transition: all 0.4s ease-in-out;
+}
+ 
+
+</style>
+{% endblock content %}
