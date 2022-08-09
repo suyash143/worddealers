@@ -11,6 +11,7 @@ def main(request):
 
 
 def index(request):
+
     return render(request, 'index.html', {'index': models.Index.objects.all().latest('pk'),
                                           'contact': models.Contact.objects.all().latest('pk'),
                                           'clients': models.Client.objects.all(),
