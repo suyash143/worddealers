@@ -643,19 +643,10 @@ ul.tags li a:hover {
 }
 
 .box-header.is-fixed {
-  position: sticky;
-  top: -80px;
   background-color: #9c64c1eb;
-  -webkit-transition: -webkit-transform 0.3s
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
 }
-
 .box-header.is-visible {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-  position: fixed;
+  background-color: #9c64c1eb;
 }
 
 .box-header.menu-is-open {
@@ -1643,23 +1634,6 @@ footer a:hover {
   padding: 15px;
 }
 
-.overlay {
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  padding: 7px;
-  opacity: 0;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 850ms ease-in-out;
-  -moz-transition: all 850ms ease-in-out;
-  -o-transition: all 850ms ease-in-out;
-  transition: all 850ms ease-in-out;
-}
-
 /* --------------------------------
 
 08.PRICING
@@ -2472,4 +2446,29 @@ ul.services-list li {
   left: 1.25rem;
   width: 100px;
   height: 100px;
+}
+
+.v1{
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 42.3%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 0;
+    bottom: 0;
+}
+
+.overlay{
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background-image: linear-gradient(45deg, rgba(0,0,0,.6) 50%, rgba(0,0,0,.6) 50%);
+  opacity: 70%;
 }
