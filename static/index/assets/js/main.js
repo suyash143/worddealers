@@ -165,3 +165,9 @@
 
 	});
 })(jQuery);
+
+// video poster at end
+var video = document.querySelector('video');       
+video.addEventListener('ended', function() {
+	myVideo.currentTime = 0; 
+});

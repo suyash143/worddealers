@@ -3,7 +3,7 @@
 {% block content %}
 <!-- box-intro -->
 <section class="box-intro">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" style="position: relative;">
             <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/header.png' %}" alt="First slide">
@@ -27,17 +27,25 @@
         
             </div>
           </div>
+          
         </div>
-      </div>
-<!-- 
-    <div class="table-cell">
+    </div> -->
+    <video src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/header.png' %}">
+    </video>
+    <div class="overlay">
+    </div>
+    <div class="" style="transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;">
+   
 
         <h3 class="box-headline">
             <b>{{index.tagline}}</b>
         </h3>
         <h1>{{index.main_heading}}</h1>
 
-    </div> -->
+    </div>
 </section>
 <!-- end box-intro -->
 
@@ -85,7 +93,7 @@
             <div class="col-md-12 col-md-offset-2 col-sm-12">
 
                 <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url({{ achievement.image }});"></div>
+                    <div class="card-custom-img" style="background-image: url('{{ achievement.image }}');"></div>
                     <div class="card-body" style="overflow-y: auto">
                       <h4 class="card-title">{{ achievement.title }}</h4>
                       <p class="card-text">{{ achievement.text }}</p>
@@ -304,10 +312,6 @@
 	.main-footer {
 		padding-top: 2rem;
 		z-index: 1;
-	}
-
-	.box-header {
-		position: relative;
 	}
 
 .section-header p {

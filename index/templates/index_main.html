@@ -41,7 +41,7 @@
 	<header class="main-header">
 		<div class="container-fluid px-0">
 			<!-- box header -->
-			<div class="box-header d-flex flex-row align-items-center">
+			<div class="box-header d-flex flex-row align-items-center" style="position: fixed;top: 0;left: 0;">
 				<div class="box-logo">
 					<a href="{% url 'index' %}"><img src="{%static 'index/assets/img/logo.png'%}" width="60"
 							alt="Logo"></a>
@@ -57,13 +57,13 @@
 			<!-- nav -->
 			<nav>
 				<ul class="box-primary-nav">
-					<li><a data-smooth="#" href="javascript:window.location.href = '{%url "index"%}#';window.location.reload(true);">Home</a> <i class="lnr lnr-home"></i></li>
+					<li><a data-smooth="#" href="{%url 'index'%}">Home</a> <i class="lnr lnr-home"></i></li>
 
-					<li><a data-smooth="#" href="javascript:window.location.href = '{%url "index"%}#facts';window.location.reload(true);">About</a></li>
-					<li><a data-smooth="#services" href="javascript:window.location.href = '{%url "index"%}#services';window.location.reload(true);">Services</a></li>
-					<li><a data-smooth="#clients" href="javascript:window.location.href = '{%url "index"%}#clients';window.location.reload(true);">Our Clients</a></li>
-					<li><a data-smooth="#team" href="javascript:window.location.href = '{%url "index"%}#team';window.location.reload(true);">Team</a></li>
-					<li><a data-smooth="#contact" href="{% url 'contact' %}">Contact</a></li>
+					<li><a data-smooth="#facts" href="{%url 'index'%}#facts">About</a></li>
+					<li><a data-smooth="#services" href="{%url 'index'%}#services">Services</a></li>
+					<li><a data-smooth="#clients" href="{%url 'index'%}#clients">Our Clients</a></li>
+					<li><a data-smooth="#team" href="{%url 'index'%}#team">Team</a></li>
+					<li><a data-smooth="#contact" href="{%url 'contact'%}">Contact</a></li>
 
 					<li class="box-label">SOCIAL</li>
 
