@@ -6,17 +6,20 @@
     <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" style="position: relative;">
-            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/header.png' %}" alt="First slide">
+            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;"
+                 src="{% static 'index/assets/img/end.png' %}" alt="First slide">
             <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
 
                 <h3 class="box-headline">
-                    <b>{{index.tagline}}</b>
+                    <b></b>
                 </h3>
-                <h1>{{index.main_heading}}</h1>
+                <h1></h1>
         
             </div>
           </div>
-          <div class="carousel-item" style="position: relative;">
+
+
+        <div class="carousel-item" style="position: relative;">
             <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/contact_header.png' %}" alt="First slide">
             <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
 
@@ -24,10 +27,14 @@
                     <b>{{index.tagline}}</b>
                 </h3>
                 <h1>{{index.main_heading}}</h1>
-        
+
             </div>
           </div>
-          
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 1ce1ff67171d28de0751c0006b92603a9ee4a7e2
         </div>
     </div> -->
     <video id="video" src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
@@ -40,10 +47,10 @@
     top: 50%;">
    
 
-        <h3 class="box-headline">
-            <b>{{index.tagline}}</b>
-        </h3>
-        <h1>{{index.main_heading}}</h1>
+<!--        <h3 class="box-headline">-->
+<!--            <b>{{index.tagline}}</b>-->
+<!--        </h3>-->
+<!--        <h1>{{index.main_heading}}</h1>-->
 
     </div> -->
 </section>
@@ -93,10 +100,11 @@
             <div class="col-md-12 col-md-offset-2 col-sm-12">
 
                 <div class="card card-custom bg-white border-white border-0">
-                    <div class="card-custom-img" style="background-image: url('{{ achievement.image }}');"></div>
+                    <div class="card-custom-img" style="background-image: url({{ achievement.image.url }});"></div>
+
                     <div class="card-body" style="overflow-y: auto">
                       <h4 class="card-title">{{ achievement.title }}</h4>
-                      <p class="card-text">{{ achievement.text }}</p>
+                      <p class="card-text" style="font-size:13px;!important">{{ achievement.text }}</p>
                     </div>
                   </div>
         
@@ -207,7 +215,7 @@
       <div class="row no-gutters clients-wrap clearfix wow fadeInUp d-flex justify-content-center" style="visibility: visible; animation-name: fadeInUp;">
         {% for client in clients %}
         <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="client-logo">
+          <div class="client-logo" style="background:#dbbff1;">
             <img src="{{client.image.url}}" class="img-fluid" alt="">
           </div>
         </div>

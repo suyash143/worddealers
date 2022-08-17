@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 from cgitb import enable
 from turtle import heading
 from os import link
@@ -105,7 +104,7 @@ class Contact(models.Model):
     contact_page_heading = models.CharField(max_length=50, blank=False)
     contact_page_para = models.CharField(max_length=50, blank=False)
     address = models.CharField(max_length=150, null= True)
-    map_link = models.URLField(default=NULL)
+    map_link = models.URLField(null=True)
     email = models.CharField(max_length=150, null= True)
     number = models.CharField(max_length=150, null= True)
     work_time = models.CharField(max_length=150, null= True)
