@@ -30,7 +30,7 @@
           
         </div>
     </div> -->
-    <video id="video" src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/header.png' %}">
+    <video id="video" src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
     </video>
     <!-- <div class="overlay">
     </div> -->
@@ -361,11 +361,11 @@
 
 </style>
 
-// mobile view video toggle
 <script>
     var video = document.getElementById('video');
     if (window.screen.width < '786')
         video.src = '{% static "index/assets/potrait.mp4" %}';
+        video.poster = '{% static "index/assets/img/wd pt.png" %}';
         video.load();
         video.play();
 </script>
