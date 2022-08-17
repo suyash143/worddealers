@@ -30,18 +30,13 @@
 
             </div>
           </div>
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 1ce1ff67171d28de0751c0006b92603a9ee4a7e2
         </div>
     </div> -->
-    <video src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/header.png' %}">
+    <video id="video" src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
     </video>
-    <div class="overlay">
-    </div>
-    <div class="" style="transform: translate(-50%, -50%);
+    <!-- <div class="overlay">
+    </div> -->
+    <!-- <div class="" style="transform: translate(-50%, -50%);
     position: absolute;
     left: 50%;
     top: 50%;">
@@ -52,7 +47,7 @@
 <!--        </h3>-->
 <!--        <h1>{{index.main_heading}}</h1>-->
 
-    </div>
+    </div> -->
 </section>
 <!-- end box-intro -->
 
@@ -127,7 +122,7 @@
 
 
 
-        <div class="row owl-carousel owl-demo owl-theme">
+        <div class="row carousel-team owl-carousel owl-demo owl-theme">
             {% for member in team %}
             <!-- single member -->
             <div class="col-xl-3 col-sm-6 mb-5">
@@ -337,7 +332,7 @@
 }
 #clients .clients-wrap {
     border-top: 1px solid #d6eaff;
-    {% comment %} border-left: 1px solid #d6eaff; {% endcomment %}
+
     margin-bottom: 30px;
 }
 
@@ -368,5 +363,14 @@
  
 
 </style>
+
+<script>
+    var video = document.getElementById('video');
+    if (window.screen.width < '786')
+        video.src = '{% static "index/assets/potrait.mp4" %}';
+        video.poster = '{% static "index/assets/img/wd pt.png" %}';
+        video.load();
+        video.play();
+</script>
 
 {% endblock content %}

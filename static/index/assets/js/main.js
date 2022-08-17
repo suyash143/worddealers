@@ -137,11 +137,25 @@
 				}
 			}
 		})
-
-		$("#owl-client").owlCarousel({
-		 autoPlay: 3000, //Set AutoPlay to 3 seconds
-		 items : 4
- 		});
+		$('.carousel-team').owlCarousel({
+			items: 4,
+			loop: true,
+			nav:true,
+			autoPlay: true,
+			autoPlay: 6000,
+			margin:10,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:1,
+					nav:true
+				},
+				600:{
+					items:3,
+					nav:false
+				}
+			}
+		})
 
 		// dropdown - mobile
 		$("nav.mobile-nav").html($("nav.desktop-nav").html()); // set navbar
@@ -171,3 +185,4 @@ var video = document.querySelector('video');
 video.addEventListener('ended', function() {
 	myVideo.currentTime = 0; 
 });
+

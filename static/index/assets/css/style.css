@@ -17,7 +17,10 @@
 }
 
 body {
-  width: 100vw;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
   background-color: #c18de5a1;  /*#492a51*/
   color: #000;
   font: 400 14px/1.8 "Ubuntu", sans-serif;
@@ -2454,7 +2457,7 @@ ul.services-list li {
     transform: translate(-50%, -50%);
     position: absolute;
     left: 50%;
-    top: 42.3%;
+    top: 43%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
