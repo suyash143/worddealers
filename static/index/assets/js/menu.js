@@ -45,3 +45,11 @@ jQuery(document).ready(function($){
 		}
 	});
 });
+
+
+// close hamburger menu after click a
+$( 'nav ul li a' ).on("click", function(){
+	$('.box-primary-nav').removeClass('is-visible');
+  });
+  
+  

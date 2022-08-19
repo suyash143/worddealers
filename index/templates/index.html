@@ -36,18 +36,6 @@
     </video>
     <!-- <div class="overlay">
     </div> -->
-    <!-- <div class="" style="transform: translate(-50%, -50%);
-    position: absolute;
-    left: 50%;
-    top: 50%;">
-   
-
-<!--        <h3 class="box-headline">-->
-<!--            <b>{{index.tagline}}</b>-->
-<!--        </h3>-->
-<!--        <h1>{{index.main_heading}}</h1>-->
-
-    </div> -->
 </section>
 <!-- end box-intro -->
 
@@ -370,7 +358,13 @@
         video.src = '{% static "index/assets/potrait.mp4" %}';
         video.poster = '{% static "index/assets/img/wd pt.png" %}';
         video.load();
-        video.play();
+        video.play();       
+    video.play();
+    video.addEventListener('ended',function(){
+    v=video.currentSrc;
+    video.src='';
+    video.src=v;            
+    }); 
 </script>
 
 {% endblock content %}
