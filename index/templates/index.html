@@ -32,7 +32,7 @@
           </div>
         </div>
     </div> -->
-    <video id="video" src="{% static 'index/assets/WD white txt.mp4' %}" muted loop autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
+    <video id="video" src="{% static 'index/assets/new.mp4' %}" muted autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
     </video>
     <!-- <div class="overlay">
     </div> -->
@@ -74,9 +74,12 @@
         </div>
     </div>
     <div class="container">
-        <div class="col-md-12 col-sm-12 text-center">
-            <h3 class="py-3">Achievements</h3>
+    <div class="row mb-3 center">
+            <div class="col-md-12 col-sm-12">
+                <h2 style="letter-spacing: 2px;" >Achievements</h2>
+            </div>
         </div>
+
 
         <div class="row owl-carousel owl-demo owl-theme">
             {% for achievement in achievements %}
@@ -103,7 +106,7 @@
     <div class="container">
         <div class="row mb-5 center">
             <div class="col-md-12 col-sm-12">
-                <h2>Our Team</h2>
+                <h2>Our Core Team</h2>
                 <h5 class="">{{ index.team_heading }}
             </div>
         </div>
@@ -355,8 +358,8 @@
 <script>
     var video = document.getElementById('video');
     if (window.screen.width < '786')
-        video.src = '{% static "index/assets/potrait.mp4" %}';
-        video.poster = '{% static "index/assets/img/wd pt.png" %}';
+        video.src = '{% static "index/assets/new-p.mp4" %}';
+        video.poster = '{% static "index/assets/img/portrait-static.png" %}';
         video.load();
         video.play();       
     video.play();

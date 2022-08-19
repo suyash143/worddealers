@@ -16,7 +16,7 @@ def index(request):
                                           'contact': models.Contact.objects.all().latest('pk'),
                                           'clients': models.Client.objects.all(),
                                           'testimonials1': models.Testimonial.objects.filter(id='1'),
-                                          'testimonials': models.Testimonial.objects.all(),
+                                          'testimonials': models.Testimonial.objects.all()[1:],
                                           'achievements':models.Achievements.objects.all(),
                                           'team': models.Team.objects.all(), 'services': models.Service.objects.all()})
 
