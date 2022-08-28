@@ -3,35 +3,7 @@
 {% block content %}
 <!-- box-intro -->
 <section class="box-intro">
-    <!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" style="position: relative;">
-            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;"
-                 src="{% static 'index/assets/img/end.png' %}" alt="First slide">
-            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
 
-                <h3 class="box-headline">
-                    <b></b>
-                </h3>
-                <h1></h1>
-        
-            </div>
-          </div>
-
-
-        <div class="carousel-item" style="position: relative;">
-            <img class="d-block w-100" style="height: 100vh;width: 100%;background-attachment: fixed;background-position: center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;" src="{% static 'index/assets/img/contact_header.png' %}" alt="First slide">
-            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">
-
-                <h3 class="box-headline">
-                    <b>{{index.tagline}}</b>
-                </h3>
-                <h1>{{index.main_heading}}</h1>
-
-            </div>
-          </div>
-        </div>
-    </div> -->
     <video id="video" src="{% static 'index/assets/new.mp4' %}" muted autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
     </video>
     <!-- <div class="overlay">
@@ -67,7 +39,7 @@
                 </div>
               </div>
         </div>
-        <div class="row ">
+        <div class="row mx-0">
             <div class="col-md-12 col-sm-12">
                 <p class="module-subtitle mb-0">{{ index.about }}
             </div>
@@ -256,7 +228,7 @@
 
 
 <!-- CLIENTS -->
-<div id="getintouch" class=" pb-4 mt-25j mbr-box mbr-section mbr-section--relative">
+<div id="getintouch" class=" pb-4 mbr-box mbr-section mbr-section--relative">
     <div class="container">
         <div class=" d-flex justify-content-between align-items-center pt-4">
             <div class="">
@@ -266,10 +238,6 @@
         </div>
     </div>
 </div>
-<style>
- 
-</style>
-
 
 <style>
     #services, #testimoials {
@@ -294,7 +262,6 @@
 
     #clients{
         background-color: #c18de5a1;
-        {% comment %} background-image: url("{% static 'images/services.png' %}"); {% endcomment %}
         background-repeat: no-repeat;
     }
 
