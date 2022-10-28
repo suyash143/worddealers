@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import imp
 from pathlib import Path
+import django_heroku
+import dj_database_url
 import os
 import django
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +30,7 @@ SECRET_KEY = 'django-insecure-sgz#0(sf6hmqx9r71&&^1j7ztm_pegicm!2c2wru7%+if8c-bk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.29.239', '127.0.0.1', 'worddealers.onrender.com', 'worddealers.com']
+ALLOWED_HOSTS = ['192.168.29.239', '127.0.0.1', 'worddealers.onrender.com', 'worddealers.com','*']
 
 # Application definition
 
@@ -135,7 +137,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-
+django_heroku.settings(locals())
 # SMTP CONFIGURATION
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = ''
