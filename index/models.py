@@ -1,6 +1,3 @@
-from cgitb import enable
-from turtle import heading
-from os import link
 from django.db import models
 from PIL import Image
 
