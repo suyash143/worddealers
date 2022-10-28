@@ -1,1 +1,1 @@
-web gunicorn worddealers.wsgi:application --log-file -
+web gunicorn worddealers.wsgi --log-file -
