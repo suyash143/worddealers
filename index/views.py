@@ -17,7 +17,7 @@ def index(request):
                                           'clients': models.Client.objects.all(),
                                           'testimonials1': models.Testimonial.objects.filter(id='1'),
                                           'testimonials': models.Testimonial.objects.all()[1:],
-                                          'achievements':models.Achievements.objects.all(),
+                                          'achievements':models.Achievements.objects.all().order_by('-pk'),
                                           'team': models.Team.objects.all(), 'services': models.Service.objects.all()})
 
 

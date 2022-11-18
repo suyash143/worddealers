@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sgz#0(sf6hmqx9r71&&^1j7ztm_pegicm!2c2wru7%+if8c-bk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.29.239', '127.0.0.1', 'worddealers.onrender.com', 'worddealers.com','worddealers.herokuapp.com']
 
