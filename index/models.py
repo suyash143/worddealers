@@ -18,7 +18,7 @@ class Index(models.Model):
     tagline = models.TextField(max_length=100)
     main_heading = models.TextField(max_length=100, null=True)
     about = models.TextField(max_length=500, null=True)
-    stats = models.ManyToManyField(Stat, null=True)
+    stats = models.ManyToManyField(Stat, blank=True)
     team_heading = models.TextField(max_length=200, null=True)
     services_heading = models.TextField(max_length=200, null=True)
     portfolio = models.TextField(max_length=200, null=True)
