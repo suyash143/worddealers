@@ -111,3 +111,12 @@ class Contact(models.Model):
     email = models.CharField(max_length=150, null=True)
     number = models.CharField(max_length=150, null=True)
     work_time = models.CharField(max_length=150, null=True)
+
+
+class Award(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=150)
+    image = models.ImageField(upload_to='awards', null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)

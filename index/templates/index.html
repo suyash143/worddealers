@@ -2,18 +2,16 @@
 {%load static%}
 {% block content %}
 <!-- box-intro -->
-<section class="box-intro">
+<section class="box-intro" style="padding-bottom: 10px">
 
     <video id="video" src="{% static 'index/assets/new.mp4' %}" muted playsinline autoplay class="d-block w-100 v1" poster="{% static 'index/assets/img/word dealers services.png' %}">
     </video>
-    <!-- <div class="overlay">
-    </div> -->
+
 </section>
-<!-- end box-intro -->
 
-<!-- Ablout -->
 
-<div id="facts" class="facts mbr-box mbr-section mbr-section--relative">
+
+<div id="facts" class="facts mbr-box mbr-section mbr-section--relative " >
     <div class="container">
         <div class="row mb-3 center">
             <div class="col-md-12 col-sm-12">
@@ -45,6 +43,27 @@
             </div>
         </div>
     </div>
+
+
+    <div class="container">
+    <div class="row mb-3 center">
+            <div class="col-md-12 col-sm-12">
+                <h2 style="letter-spacing: 2px;" >Awards and Recognitions</h2>
+            </div>
+        </div>
+<div id="owl-demo" class="owl-carousel owl-theme">
+    {% for award in awards %}
+
+  <div class="item"><img src="{{ award.image.url }}" alt="{{ award.title }}"></div>
+{% endfor %}
+
+</div>
+
+
+  </div>
+
+
+
     <div class="container">
     <div class="row mb-3 center">
             <div class="col-md-12 col-sm-12">
@@ -71,7 +90,6 @@
 
         </div>
   </div>
-</div>
 
 <!-- TEAM -->
 <section id="team" class="team mbr-box mbr-section mbr-section--relative pb-5">
@@ -79,7 +97,7 @@
         <div class="row mb-5 center">
             <div class="col-md-12 col-sm-12">
                 <h2>Our Core Team</h2>
-                <h5 class="">{{ index.team_heading }}
+                <h5 class="">{{ index.team_heading }}</h5>
             </div>
         </div>
 
@@ -166,7 +184,7 @@
         <div class="row mb-5 center">
             <div class="col-md-12 col-sm-12">
                 <h2>Our Clients</h2>
-                <h5 class="">{{ index.team_heading }}
+                <h5 class="">{{ index.team_heading }}</h5>
             </div>
         </div>
 
@@ -318,9 +336,20 @@
 #clients img {
     transition: all 0.4s ease-in-out;
 }
- 
+
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 </style>
+
 
 <script>
     var video = document.getElementById('video');
@@ -328,13 +357,30 @@
         video.src = '{% static "index/assets/new-p.mp4" %}';
         video.poster = '{% static "index/assets/img/portrait-static.png" %}';
         video.load();
-        video.play();       
+        video.play();
     video.play();
     video.addEventListener('ended',function(){
     v=video.currentSrc;
     video.src='';
-    video.src=v;            
-    }); 
+    video.src=v;
+    });
+
+
+
+    $(document).ready(function() {
+
+  $("#owl-demo").owlCarousel({
+
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+
+  });
+
+});
 </script>
+
 
 {% endblock content %}
